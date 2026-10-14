@@ -56,29 +56,34 @@
 
   <!-- Расширения и включения -->
   <g fill="#f3effc" stroke="#4a3a86" stroke-width="1.8">
-    <ellipse cx="880" cy="210" rx="150" ry="36"/>
-    <ellipse cx="880" cy="350" rx="150" ry="36"/>
+    <ellipse cx="880" cy="200" rx="150" ry="36"/>
+    <ellipse cx="880" cy="300" rx="150" ry="36"/>
+    <ellipse cx="880" cy="430" rx="150" ry="36"/>
     <ellipse cx="880" cy="620" rx="150" ry="36"/>
   </g>
   <g font-size="15" fill="#222" text-anchor="middle">
-    <text x="880" y="205">Найти и отфильтровать</text>
-    <text x="880" y="224">записи</text>
-    <text x="880" y="345">Проверить данные</text>
-    <text x="880" y="364">и занятость времени</text>
+    <text x="880" y="195">Найти и отфильтровать</text>
+    <text x="880" y="214">записи</text>
+    <text x="880" y="295">Выбрать время</text>
+    <text x="880" y="314">в ленте дня</text>
+    <text x="880" y="425">Проверить данные</text>
+    <text x="880" y="444">и занятость времени</text>
     <text x="880" y="625">Подтвердить действие</text>
   </g>
 
   <g stroke="#333" stroke-width="1.5" stroke-dasharray="7 5" fill="none" marker-end="url(#open)">
-    <line x1="730" y1="210" x2="617" y2="210"/>
-    <line x1="612" y1="298" x2="733" y2="338"/>
-    <line x1="612" y1="402" x2="733" y2="362"/>
+    <line x1="730" y1="203" x2="617" y2="209"/>
+    <line x1="730" y1="301" x2="617" y2="305"/>
+    <line x1="608" y1="316" x2="738" y2="415"/>
+    <line x1="612" y1="402" x2="733" y2="436"/>
     <line x1="612" y1="582" x2="733" y2="610"/>
     <line x1="612" y1="658" x2="733" y2="630"/>
   </g>
   <g font-size="13.5" fill="#4a3a86" font-style="italic" text-anchor="middle">
-    <text x="673" y="200">«extend»</text>
-    <text x="664" y="304">«include»</text>
-    <text x="664" y="410">«include»</text>
+    <text x="673" y="196">«extend»</text>
+    <text x="673" y="294">«extend»</text>
+    <text x="700" y="356">«include»</text>
+    <text x="664" y="440">«include»</text>
     <text x="664" y="584">«include»</text>
     <text x="664" y="666">«include»</text>
   </g>

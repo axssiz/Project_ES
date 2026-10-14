@@ -7,30 +7,74 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="bookings">
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html">
-        <span class="logo-mark" aria-hidden="true">Л</span>
-        <span>Студия «Лаванда»</span>
+  <header class="band">
+    <div class="wrap masthead">
+      <a class="brand" href="index.html" aria-label="Студия «Лаванда», на главную">
+        <svg class="sprig" viewBox="0 0 26 52" aria-hidden="true">
+          <path d="M13 50 C13 38 13 24 13 7" stroke="#cfe3cc" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <path d="M13 44 C8 41 5.5 37 5.5 33 C9.5 35.5 12 39 13 44 Z" fill="#cfe3cc"/>
+          <path d="M13 40 C17.5 37.5 20 34 20.5 30 C16.5 32 14 35.5 13 40 Z" fill="#cfe3cc"/>
+          <ellipse cx="13" cy="5" rx="2.4" ry="3.6" fill="#ffffff"/>
+          <ellipse cx="10" cy="10" rx="2.6" ry="4" transform="rotate(-24 10 10)" fill="#ffffff"/>
+          <ellipse cx="16" cy="12.5" rx="2.6" ry="4" transform="rotate(24 16 12.5)" fill="#e3d8ff"/>
+          <ellipse cx="10" cy="16.5" rx="2.6" ry="4" transform="rotate(-24 10 16.5)" fill="#e3d8ff"/>
+          <ellipse cx="16" cy="19" rx="2.6" ry="4" transform="rotate(24 16 19)" fill="#ffffff"/>
+          <ellipse cx="10.4" cy="23" rx="2.4" ry="3.6" transform="rotate(-24 10.4 23)" fill="#c7b5ff"/>
+          <ellipse cx="15.6" cy="25.5" rx="2.4" ry="3.6" transform="rotate(24 15.6 25.5)" fill="#c7b5ff"/>
+        </svg>
+        <span class="brand-name">Лаванда</span>
+        <span class="brand-note">журнал записи</span>
       </a>
-      <nav class="main-nav" aria-label="Основная навигация">
+      <nav class="main-nav" aria-label="Разделы сайта">
         <a href="index.html" data-nav="home">Главная</a>
         <a href="bookings.html" data-nav="bookings">Записи</a>
         <a href="about.html" data-nav="about">О проекте</a>
       </nav>
     </div>
+
+    <div class="wrap hero">
+      <div class="calendar">
+        <div class="cal-stack">
+          <div class="cal-page" id="calPage" aria-hidden="true">
+            <div class="cal-rings"><i></i><i></i></div>
+            <span class="cal-month" id="calMonth">октябрь</span>
+            <span class="cal-day" id="calDay">15</span>
+            <span class="cal-weekday" id="calWeekday">четверг</span>
+          </div>
+        </div>
+        <div class="day-nav">
+          <button type="button" class="icon-btn" id="dayPrev" aria-label="Предыдущий день">‹</button>
+          <button type="button" class="btn btn-light btn-small" id="dayToday">Сегодня</button>
+          <button type="button" class="icon-btn" id="dayNext" aria-label="Следующий день">›</button>
+        </div>
+      </div>
+
+      <div class="hero-text">
+        <h1 class="hero-kicker">Журнал записей</h1>
+        <h2 class="hero-sub" id="dayTitle">Лента дня</h2>
+        <p class="hero-summary" id="daySummary" aria-live="polite"></p>
+      </div>
+    </div>
   </header>
 
-  <main class="container">
-    <div class="page-title">
-      <h1>Журнал записей</h1>
-      <p class="muted">Создание, просмотр, изменение, отмена и удаление записей клиентов.</p>
-    </div>
+  <main class="wrap">
+    <section class="ribbon" aria-labelledby="ribbonTitle">
+      <div class="ribbon-head">
+        <h2 id="ribbonTitle">Лента дня</h2>
+        <div class="legend" aria-hidden="true">
+          <span><i></i>волосы</span>
+          <span><i class="lg-nails"></i>ногти</span>
+          <span><i class="lg-now"></i>сейчас</span>
+        </div>
+      </div>
+      <div class="tl-scroll" id="timeline"></div>
+      <p class="hint">Нажмите на свободное время — услуга, дата и время подставятся в форму. Нажмите на запись, чтобы изменить её.</p>
+    </section>
 
-    <div class="alert alert-warning" id="storageWarning" hidden></div>
+    <div class="alert" id="storageWarning" role="alert" hidden></div>
 
-    <div class="bookings-layout">
-      <section class="card form-card" aria-labelledby="formTitle">
+    <div class="desk">
+      <section class="slip" aria-labelledby="formTitle">
         <h2 id="formTitle">Новая запись</h2>
         <form id="bookingForm" novalidate>
           <input type="hidden" id="bookingId">
@@ -38,21 +82,21 @@
           <div class="field">
             <label for="clientName">Имя клиента <span class="req" aria-hidden="true">*</span></label>
             <input type="text" id="clientName" name="clientName" maxlength="60" autocomplete="off"
-                   placeholder="Например: Анна Смирнова" aria-describedby="clientNameError">
+                   placeholder="Айгерим Сапарова" aria-describedby="clientNameError">
             <p class="field-error" id="clientNameError"></p>
           </div>
 
           <div class="field">
             <label for="phone">Телефон <span class="req" aria-hidden="true">*</span></label>
             <input type="tel" id="phone" name="phone" maxlength="20" autocomplete="off"
-                   placeholder="+7 900 000-00-00" aria-describedby="phoneError">
+                   placeholder="+7 701 000-00-00" aria-describedby="phoneError">
             <p class="field-error" id="phoneError"></p>
           </div>
 
           <div class="field">
             <label for="serviceId">Услуга <span class="req" aria-hidden="true">*</span></label>
             <select id="serviceId" name="serviceId" aria-describedby="serviceIdError">
-              <option value="">— выберите услугу —</option>
+              <option value="">Выберите услугу</option>
             </select>
             <p class="field-error" id="serviceIdError"></p>
           </div>
@@ -78,22 +122,23 @@
           <div class="field">
             <label for="comment">Комментарий</label>
             <textarea id="comment" name="comment" rows="3" maxlength="200"
-                      placeholder="Пожелания клиента (необязательно)"></textarea>
-            <p class="hint"><span id="commentCounter">0</span> / 200</p>
+                      placeholder="Пожелания клиента, если есть"></textarea>
+            <p class="hint"><span id="commentCounter">0</span> из 200 символов</p>
           </div>
+
+          <div class="perf" aria-hidden="true"></div>
 
           <div class="form-actions">
             <button type="submit" class="btn btn-primary" id="submitBtn">Создать запись</button>
-            <button type="button" class="btn btn-ghost" id="resetBtn">Очистить</button>
+            <button type="button" class="btn btn-quiet" id="resetBtn">Очистить</button>
           </div>
-          <p class="hint">Поля со звёздочкой обязательны. Используйте вымышленные данные:
-            записи хранятся только в этом браузере.</p>
+          <p class="hint">Поля со звёздочкой обязательны. Вводите вымышленные данные: записи хранятся только в этом браузере.</p>
         </form>
       </section>
 
-      <section class="card list-card" aria-labelledby="listTitle">
-        <div class="list-head">
-          <h2 id="listTitle">Список записей</h2>
+      <section class="ledger" aria-labelledby="listTitle">
+        <div class="ledger-head">
+          <h2 id="listTitle">Все записи</h2>
           <span class="muted" id="listCounter"></span>
         </div>
 
@@ -112,14 +157,14 @@
             <span>Дата</span>
             <input type="date" id="dateFilter">
           </label>
-          <button type="button" class="btn btn-ghost btn-small" id="clearFilters">Сбросить</button>
+          <button type="button" class="btn btn-quiet" id="clearFilters">Сбросить</button>
         </div>
 
         <div class="table-wrap">
           <table class="bookings-table">
             <thead>
               <tr>
-                <th>Дата и время</th>
+                <th>Время</th>
                 <th>Клиент</th>
                 <th>Услуга</th>
                 <th>Статус</th>
@@ -132,16 +177,14 @@
 
         <div class="empty" id="emptyState" hidden>
           <p id="emptyText">Записей пока нет.</p>
-          <button type="button" class="btn btn-ghost btn-small" id="demoBtn">Добавить демонстрационные записи</button>
+          <button type="button" class="btn btn-quiet btn-small" id="demoBtn">Добавить демонстрационные записи</button>
         </div>
       </section>
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      Учебный проект · группа ПО2401 · 2026 · Данные хранятся только в этом браузере (localStorage)
-    </div>
+    <div class="wrap">Учебный проект группы ПО2401, 2026. Записи хранятся только в этом браузере.</div>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>

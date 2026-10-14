@@ -7,88 +7,104 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="about">
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html">
-        <span class="logo-mark" aria-hidden="true">Л</span>
-        <span>Студия «Лаванда»</span>
+  <header class="band band-short">
+    <div class="wrap masthead">
+      <a class="brand" href="index.html" aria-label="Студия «Лаванда», на главную">
+        <svg class="sprig" viewBox="0 0 26 52" aria-hidden="true">
+          <path d="M13 50 C13 38 13 24 13 7" stroke="#cfe3cc" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <path d="M13 44 C8 41 5.5 37 5.5 33 C9.5 35.5 12 39 13 44 Z" fill="#cfe3cc"/>
+          <path d="M13 40 C17.5 37.5 20 34 20.5 30 C16.5 32 14 35.5 13 40 Z" fill="#cfe3cc"/>
+          <ellipse cx="13" cy="5" rx="2.4" ry="3.6" fill="#ffffff"/>
+          <ellipse cx="10" cy="10" rx="2.6" ry="4" transform="rotate(-24 10 10)" fill="#ffffff"/>
+          <ellipse cx="16" cy="12.5" rx="2.6" ry="4" transform="rotate(24 16 12.5)" fill="#e3d8ff"/>
+          <ellipse cx="10" cy="16.5" rx="2.6" ry="4" transform="rotate(-24 10 16.5)" fill="#e3d8ff"/>
+          <ellipse cx="16" cy="19" rx="2.6" ry="4" transform="rotate(24 16 19)" fill="#ffffff"/>
+          <ellipse cx="10.4" cy="23" rx="2.4" ry="3.6" transform="rotate(-24 10.4 23)" fill="#c7b5ff"/>
+          <ellipse cx="15.6" cy="25.5" rx="2.4" ry="3.6" transform="rotate(24 15.6 25.5)" fill="#c7b5ff"/>
+        </svg>
+        <span class="brand-name">Лаванда</span>
+        <span class="brand-note">журнал записи</span>
       </a>
-      <nav class="main-nav" aria-label="Основная навигация">
+      <nav class="main-nav" aria-label="Разделы сайта">
         <a href="index.html" data-nav="home">Главная</a>
         <a href="bookings.html" data-nav="bookings">Записи</a>
         <a href="about.html" data-nav="about">О проекте</a>
       </nav>
     </div>
+    <div class="wrap about-hero">
+      <h1 class="hero-kicker">О проекте</h1>
+      <p class="hero-summary">Итоговый проект производственной практики «Проектирование и создание веб-сайта». Тема — запись на услуги в студии красоты.</p>
+    </div>
   </header>
 
-  <main class="container">
-    <div class="page-title">
-      <h1>О проекте</h1>
-      <p class="muted">Итоговый проект производственной практики «Проектирование и создание веб-сайта».</p>
-    </div>
+  <main class="wrap">
 
-    <div class="about-grid">
-      <section class="card">
-        <h2>Цель</h2>
-        <p>
-          Заменить бумажный журнал записи небольшой студии красоты простым веб-приложением:
-          администратор быстро создаёт запись, видит список на любой день, может изменить
-          или отменить запись, а система не даёт записать двух клиентов к одному мастеру
-          на пересекающееся время.
-        </p>
-        <h3>Функции</h3>
-        <ul class="list">
-          <li>создание записи с проверкой обязательных полей;</li>
-          <li>просмотр списка с поиском и фильтрами по статусу и дате;</li>
-          <li>редактирование записи и смена статуса;</li>
-          <li>отмена записи и удаление с подтверждением;</li>
-          <li>проверка занятости времени с учётом длительности услуги;</li>
-          <li>сохранение данных в localStorage.</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2>Команда</h2>
-        <table class="plain-table">
-          <tbody>
-            <tr><th>Фамилия И. О. (1)</th><td>аналитик: анализ, ТЗ, журнал изменений, тестирование</td></tr>
-            <tr><th>Фамилия И. О. (2)</th><td>проектировщик: диаграммы, модель данных, макеты</td></tr>
-            <tr><th>Фамилия И. О. (3)</th><td>разработчик: HTML, CSS, JavaScript, localStorage</td></tr>
-          </tbody>
-        </table>
-        <h3>Технологии</h3>
-        <p>HTML5, CSS3, JavaScript (без фреймворков), Web Storage API (localStorage).</p>
-      </section>
-
-      <section class="card">
-        <h2>Безопасность и ограничения</h2>
-        <ul class="list">
-          <li>пароли и регистрация не используются;</li>
-          <li>в демонстрации применяются только вымышленные имена и телефоны;</li>
-          <li>пустую запись сохранить нельзя, поля проверяются по формату;</li>
-          <li>введённый текст выводится как текст, а не как HTML-код;</li>
-          <li>удаление и отмена требуют подтверждения;</li>
-          <li>localStorage — учебное хранилище: данные видны только в этом браузере и не защищены шифрованием.</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2>Данные</h2>
-        <p>
-          Записи хранятся в localStorage под ключом <code>lavanda.bookings</code> в виде
-          массива объектов JSON. Сейчас в хранилище: <strong id="aboutCount">0</strong>.
-        </p>
-        <p class="muted">Версия 1.2. Изменения по журналу: проверка занятости времени с учётом длительности
-          услуги (1.1); отмена записи меняет статус на «Отменена» вместо удаления (1.2).</p>
-        <button type="button" class="btn btn-danger" id="clearAllBtn">Удалить все записи</button>
-      </section>
-    </div>
+    <dl class="facts">
+      <div>
+        <dt>Зачем</dt>
+        <dd>
+          Студия красоты «Лаванда» вела запись в бумажном журнале: свободное время искали
+          вручную, а двух клиентов иногда записывали к одному мастеру на одно время. Сайт
+          заменяет журнал: администратор видит день целиком, быстро создаёт запись,
+          переносит или отменяет её, а система не допускает пересечений.
+        </dd>
+      </div>
+      <div>
+        <dt>Что умеет</dt>
+        <dd>
+          <ul class="list">
+            <li>показывает ленту дня: расписание мастеров по часам с 09:00 до 21:00;</li>
+            <li>записывает клиента по щелчку на свободное время или через форму;</li>
+            <li>проверяет обязательные поля, формат телефона, дату и рабочее время;</li>
+            <li>не даёт записать двух клиентов к мастеру на пересекающееся время;</li>
+            <li>изменяет, отменяет и удаляет записи с подтверждением;</li>
+            <li>ищет по имени и телефону, фильтрует по статусу и дате;</li>
+            <li>хранит записи в localStorage, поэтому они остаются после перезагрузки.</li>
+          </ul>
+        </dd>
+      </div>
+      <div>
+        <dt>Команда</dt>
+        <dd>
+          <ul class="team">
+            <li><b>Фамилия И. О.</b><span>аналитик: анализ, ТЗ, журнал изменений, тестирование</span></li>
+            <li><b>Фамилия И. О.</b><span>проектировщик: диаграммы, модель данных, макеты</span></li>
+            <li><b>Фамилия И. О.</b><span>разработчик: HTML, CSS, JavaScript, localStorage</span></li>
+          </ul>
+        </dd>
+      </div>
+      <div>
+        <dt>Технологии</dt>
+        <dd>HTML5, CSS3 и JavaScript без фреймворков, хранилище браузера localStorage. Шрифты Sitka и Bahnschrift встроены в Windows, поэтому сайт работает без интернета.</dd>
+      </div>
+      <div>
+        <dt>Безопасность</dt>
+        <dd>
+          <ul class="list">
+            <li>регистрации и паролей нет;</li>
+            <li>в примерах только вымышленные имена и телефоны;</li>
+            <li>пустую запись сохранить нельзя;</li>
+            <li>введённый текст выводится как текст, а не как HTML-код;</li>
+            <li>отмена и удаление требуют подтверждения;</li>
+            <li>localStorage — учебное хранилище: данные видны только в этом браузере и не шифруются.</li>
+          </ul>
+        </dd>
+      </div>
+      <div>
+        <dt>Данные</dt>
+        <dd>
+          <p>Записи хранятся в localStorage под ключом <code>lavanda.bookings</code>. Сейчас в хранилище <strong id="aboutCount">0 записей</strong>.</p>
+          <p class="muted">Версия 1.3. По журналу изменений добавлены проверка занятости мастера (1.1), статус «Отменена» вместо удаления при отмене (1.2) и лента дня (1.3).</p>
+          <div class="data-actions">
+            <button type="button" class="btn btn-danger" id="clearAllBtn">Удалить все записи</button>
+          </div>
+        </dd>
+      </div>
+    </dl>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      Учебный проект · группа ПО2401 · 2026 · Данные хранятся только в этом браузере (localStorage)
-    </div>
+    <div class="wrap">Учебный проект группы ПО2401, 2026. Записи хранятся только в этом браузере.</div>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>

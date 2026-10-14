@@ -7,82 +7,115 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="home">
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html">
-        <span class="logo-mark" aria-hidden="true">Л</span>
-        <span>Студия «Лаванда»</span>
+  <header class="band">
+    <div class="wrap masthead">
+      <a class="brand" href="index.html" aria-label="Студия «Лаванда», на главную">
+        <svg class="sprig" viewBox="0 0 26 52" aria-hidden="true">
+          <path d="M13 50 C13 38 13 24 13 7" stroke="#cfe3cc" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <path d="M13 44 C8 41 5.5 37 5.5 33 C9.5 35.5 12 39 13 44 Z" fill="#cfe3cc"/>
+          <path d="M13 40 C17.5 37.5 20 34 20.5 30 C16.5 32 14 35.5 13 40 Z" fill="#cfe3cc"/>
+          <ellipse cx="13" cy="5" rx="2.4" ry="3.6" fill="#ffffff"/>
+          <ellipse cx="10" cy="10" rx="2.6" ry="4" transform="rotate(-24 10 10)" fill="#ffffff"/>
+          <ellipse cx="16" cy="12.5" rx="2.6" ry="4" transform="rotate(24 16 12.5)" fill="#e3d8ff"/>
+          <ellipse cx="10" cy="16.5" rx="2.6" ry="4" transform="rotate(-24 10 16.5)" fill="#e3d8ff"/>
+          <ellipse cx="16" cy="19" rx="2.6" ry="4" transform="rotate(24 16 19)" fill="#ffffff"/>
+          <ellipse cx="10.4" cy="23" rx="2.4" ry="3.6" transform="rotate(-24 10.4 23)" fill="#c7b5ff"/>
+          <ellipse cx="15.6" cy="25.5" rx="2.4" ry="3.6" transform="rotate(24 15.6 25.5)" fill="#c7b5ff"/>
+        </svg>
+        <span class="brand-name">Лаванда</span>
+        <span class="brand-note">журнал записи</span>
       </a>
-      <nav class="main-nav" aria-label="Основная навигация">
+      <nav class="main-nav" aria-label="Разделы сайта">
         <a href="index.html" data-nav="home">Главная</a>
         <a href="bookings.html" data-nav="bookings">Записи</a>
         <a href="about.html" data-nav="about">О проекте</a>
       </nav>
     </div>
+
+    <div class="wrap hero">
+      <div class="calendar">
+        <div class="cal-stack">
+          <div class="cal-page" id="calPage" aria-hidden="true">
+            <div class="cal-rings"><i></i><i></i></div>
+            <span class="cal-month" id="calMonth">октябрь</span>
+            <span class="cal-day" id="calDay">15</span>
+            <span class="cal-weekday" id="calWeekday">четверг</span>
+          </div>
+        </div>
+        <div class="day-nav">
+          <button type="button" class="icon-btn" id="dayPrev" aria-label="Предыдущий день">‹</button>
+          <button type="button" class="btn btn-light btn-small" id="dayToday">Сегодня</button>
+          <button type="button" class="icon-btn" id="dayNext" aria-label="Следующий день">›</button>
+        </div>
+      </div>
+
+      <div class="hero-text">
+        <h1 class="hero-title" id="dayTitle">Расписание</h1>
+        <p class="hero-summary" id="daySummary" aria-live="polite"></p>
+        <div class="hero-actions">
+          <a class="btn btn-sun" href="bookings.html#new">Записать клиента</a>
+          <a class="btn btn-light" href="bookings.html">Открыть журнал</a>
+        </div>
+      </div>
+    </div>
+
+    <svg class="meadow" viewBox="0 0 560 360" aria-hidden="true">
+      <defs>
+        <symbol id="lav" viewBox="0 0 40 300" overflow="visible">
+          <path d="M20 300 C19 230 21 160 20 64" fill="none" stroke="#d6c8ff" stroke-opacity="0.6" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M20 262 C10 254 5 242 6 228 C14 235 19 246 20 262Z" fill="#bedec4" fill-opacity="0.5"/>
+          <path d="M20 240 C30 233 35 222 35 208 C27 214 22 226 20 240Z" fill="#bedec4" fill-opacity="0.5"/>
+          <ellipse fill="#eee6ff" cx="20" cy="56" rx="4" ry="7"/>
+          <ellipse fill="#c7b5ff" cx="15" cy="70" rx="4.6" ry="7.6" transform="rotate(-26 15 70)"/>
+          <ellipse fill="#a68aff" cx="25" cy="76" rx="4.6" ry="7.6" transform="rotate(26 25 76)"/>
+          <ellipse fill="#a68aff" cx="15" cy="88" rx="4.4" ry="7.3" transform="rotate(-26 15 88)"/>
+          <ellipse fill="#c7b5ff" cx="25" cy="94" rx="4.4" ry="7.3" transform="rotate(26 25 94)"/>
+          <ellipse fill="#eee6ff" cx="15" cy="106" rx="4.2" ry="7" transform="rotate(-26 15 106)"/>
+          <ellipse fill="#c7b5ff" cx="25" cy="112" rx="4.2" ry="7" transform="rotate(26 25 112)"/>
+          <ellipse fill="#c7b5ff" cx="15.5" cy="124" rx="4" ry="6.6" transform="rotate(-26 15.5 124)"/>
+          <ellipse fill="#a68aff" cx="24.5" cy="130" rx="4" ry="6.6" transform="rotate(26 24.5 130)"/>
+          <ellipse fill="#a68aff" cx="16" cy="142" rx="3.6" ry="6" transform="rotate(-26 16 142)"/>
+          <ellipse fill="#eee6ff" cx="24" cy="148" rx="3.6" ry="6" transform="rotate(26 24 148)"/>
+          <ellipse fill="#c7b5ff" cx="16.5" cy="160" rx="3.2" ry="5.4" transform="rotate(-26 16.5 160)"/>
+          <ellipse fill="#a68aff" cx="23.5" cy="166" rx="3.2" ry="5.4" transform="rotate(26 23.5 166)"/>
+        </symbol>
+      </defs>
+      <g transform="translate(40 92) scale(0.85) rotate(-7 20 300)"><g class="stem" style="--i:0"><use href="#lav" width="40" height="300"/></g></g>
+      <g transform="translate(110 40) scale(1.05) rotate(-3 20 300)"><g class="stem" style="--i:3"><use href="#lav" width="40" height="300"/></g></g>
+      <g transform="translate(180 112) scale(0.8) rotate(2 20 300)"><g class="stem" style="--i:1"><use href="#lav" width="40" height="300"/></g></g>
+      <g transform="translate(250 22) scale(1.12) rotate(-1 20 300)"><g class="stem" style="--i:5"><use href="#lav" width="40" height="300"/></g></g>
+      <g transform="translate(330 80) scale(0.95) rotate(4 20 300)"><g class="stem" style="--i:2"><use href="#lav" width="40" height="300"/></g></g>
+      <g transform="translate(400 32) scale(1.1) rotate(6 20 300)"><g class="stem" style="--i:6"><use href="#lav" width="40" height="300"/></g></g>
+      <g transform="translate(468 100) scale(0.86) rotate(8 20 300)"><g class="stem" style="--i:4"><use href="#lav" width="40" height="300"/></g></g>
+      <g transform="translate(520 62) scale(1) rotate(10 20 300)"><g class="stem" style="--i:7"><use href="#lav" width="40" height="300"/></g></g>
+    </svg>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero-text">
-        <p class="eyebrow">Электронный журнал записи</p>
-        <h1>Запись клиентов на услуги без бумажного журнала</h1>
-        <p class="lead">
-          Администратор студии создаёт запись за минуту, видит занятое время
-          и не допускает двойной записи к мастеру. Все записи сохраняются
-          в браузере и остаются после перезагрузки страницы.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="bookings.html#new">Записать клиента</a>
-          <a class="btn btn-ghost" href="bookings.html">Открыть журнал</a>
+  <main class="wrap">
+    <section class="ribbon" aria-labelledby="ribbonTitle">
+      <div class="ribbon-head">
+        <h2 id="ribbonTitle">Лента дня</h2>
+        <div class="legend" aria-hidden="true">
+          <span><i></i>волосы</span>
+          <span><i class="lg-nails"></i>ногти</span>
+          <span><i class="lg-now"></i>сейчас</span>
         </div>
       </div>
-      <div class="stats" aria-label="Сводка по записям">
-        <div class="stat">
-          <span class="stat-value" id="statPlanned">0</span>
-          <span class="stat-label">активных записей</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value" id="statToday">0</span>
-          <span class="stat-label">записей на сегодня</span>
-        </div>
-        <div class="stat stat-wide">
-          <span class="stat-label">Ближайшая запись</span>
-          <span class="stat-next" id="statNext">Записей пока нет</span>
-        </div>
-      </div>
+      <div class="tl-scroll" id="timeline"></div>
+      <p class="hint">Наведите курсор на свободное время, чтобы увидеть интервал, и нажмите, чтобы записать клиента.</p>
     </section>
 
-    <section class="section">
-      <div class="section-head">
-        <h2>Услуги студии</h2>
-        <p class="muted">Длительность услуги учитывается при проверке свободного времени.</p>
+    <section class="prices" aria-labelledby="pricesTitle">
+      <div class="prices-head">
+        <h2 id="pricesTitle">Прайс-лист</h2>
+        <p class="muted">Цены в тенге. Длительность услуги определяет, сколько места запись занимает в ленте дня.</p>
       </div>
-      <div class="services-grid" id="servicesGrid"></div>
-    </section>
-
-    <section class="section">
-      <h2>Как это работает</h2>
-      <ol class="steps">
-        <li>
-          <strong>Клиент обращается</strong>
-          <span>Звонит или приходит в студию и называет нужную услугу и удобное время.</span>
-        </li>
-        <li>
-          <strong>Администратор создаёт запись</strong>
-          <span>Заполняет форму в разделе «Записи». Система проверяет поля и занятость времени.</span>
-        </li>
-        <li>
-          <strong>Запись в журнале</strong>
-          <span>Запись можно изменить, отменить, отметить выполненной или удалить.</span>
-        </li>
-      </ol>
+      <div class="price-cols" id="priceList"></div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      Учебный проект · группа ПО2401 · 2026 · Данные хранятся только в этом браузере (localStorage)
-    </div>
+    <div class="wrap">Учебный проект группы ПО2401, 2026. Записи хранятся только в этом браузере.</div>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>

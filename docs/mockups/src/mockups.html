@@ -10,35 +10,71 @@
   .chrome { height: 34px; background: #ddd; border-bottom: 2px solid #999; display: flex; align-items: center; gap: 7px; padding: 0 12px; }
   .chrome i { width: 11px; height: 11px; border-radius: 50%; background: #aaa; display: inline-block; }
   .chrome .url { margin-left: 14px; background: #fff; border: 1px solid #aaa; border-radius: 12px; font-size: 12px; padding: 2px 14px; width: 520px; color: #777; }
-  .title { position: absolute; right: 14px; top: 6px; font-size: 13px; font-weight: 700; color: #555; letter-spacing: .04em; text-transform: uppercase; }
+  .title { position: absolute; right: 14px; top: 6px; font-size: 13px; font-weight: 700; color: #555; }
   .page { padding: 0 34px 26px; position: relative; }
-  .hdr { display: flex; justify-content: space-between; align-items: center; height: 62px; border-bottom: 2px dashed #bbb; margin: 0 -34px 22px; padding: 0 34px; }
-  .logo { border: 2px solid #999; background: #f0f0f0; padding: 6px 14px; font-weight: 700; font-size: 13px; }
-  .nav { display: flex; gap: 10px; }
-  .nav span { border: 2px solid #999; padding: 5px 14px; font-size: 13px; font-weight: 600; border-radius: 6px; }
-  .nav span.on { background: #555; color: #fff; border-color: #555; }
-  .box { border: 2px solid #999; background: #f4f4f4; border-radius: 6px; padding: 12px; position: relative; }
+  /* полоса шапки во всю ширину */
+  .band { margin: 0 -34px; padding: 0 34px 70px; background: #8c8c8c; color: #fff; position: relative; }
+  .band.short { padding-bottom: 28px; }
+  .hdr { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+  .logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 20px; }
+  .logo .sprig { width: 12px; height: 34px; border: 2px solid #eee; border-radius: 6px; }
+  .logo small { font-weight: 400; font-size: 12px; opacity: .8; margin-top: 8px; }
+  .nav { display: flex; gap: 24px; font-size: 14px; font-weight: 600; }
+  .nav span { padding-bottom: 4px; }
+  .nav span.on { border-bottom: 3px solid #fff; }
+  .hero { display: grid; grid-template-columns: 170px 1fr; gap: 40px; align-items: center; padding-top: 14px; }
+  .cal { background: #fff; color: #555; border-radius: 12px; text-align: center; padding: 22px 8px 10px; position: relative; overflow: hidden; }
+  .cal::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 16px; background: #bbb; }
+  .cal .m { display: block; font-family: Georgia, serif; font-style: italic; font-size: 15px; }
+  .cal .d { display: block; font-size: 70px; font-weight: 800; line-height: .95; }
+  .cal .w { display: block; font-size: 12px; font-weight: 600; color: #777; }
+  .daynav { display: flex; gap: 6px; justify-content: center; margin-top: 10px; }
+  .circle { display: inline-grid; place-items: center; width: 28px; height: 28px; border: 2px solid #eee; border-radius: 50%; font-size: 14px; font-weight: 700; color: #fff; }
+  .box { border: 2px solid #999; background: #f4f4f4; border-radius: 14px; padding: 12px; position: relative; }
   .line { height: 10px; background: #cfcfcf; border-radius: 5px; margin: 7px 0; }
-  .line.dark { background: #9a9a9a; height: 16px; }
+  .band .line { background: #bdbdbd; }
   .w30 { width: 30%; } .w40 { width: 40%; } .w50 { width: 50%; } .w60 { width: 60%; } .w70 { width: 70%; } .w80 { width: 80%; } .w90 { width: 90%; }
-  .btn { display: inline-block; border: 2px solid #666; border-radius: 6px; padding: 6px 14px; font-size: 13px; font-weight: 700; background: #fff; }
-  .btn.main { background: #666; color: #fff; }
-  .btn.sm { padding: 3px 8px; font-size: 11.5px; font-weight: 600; }
-  .lbl { font-size: 12.5px; font-weight: 700; color: #555; margin-bottom: 4px; }
-  .inp { border: 2px solid #999; background: #fff; height: 32px; border-radius: 5px; margin-bottom: 10px; font-size: 12px; color: #999; padding: 6px 8px; }
-  .err { color: #c0392b; font-size: 11.5px; margin: -6px 0 10px; }
-  .h1 { font-size: 24px; font-weight: 700; color: #555; margin: 0 0 6px; }
-  .h2 { font-size: 16px; font-weight: 700; color: #555; margin: 0 0 10px; }
+  .btn { display: inline-block; border: 2px solid #666; border-radius: 20px; padding: 6px 16px; font-size: 13px; font-weight: 700; background: #fff; color: #444; }
+  .btn.main { background: #555; color: #fff; border-color: #555; }
+  .btn.light { background: transparent; color: #fff; border-color: #eee; }
+  .btn.accent { background: #e2e2e2; border-color: #e2e2e2; }
+  .btn.sm { padding: 2px 9px; font-size: 11px; font-weight: 600; }
+  .lbl { font-size: 12px; font-weight: 700; color: #555; margin-bottom: 3px; }
+  .inp { border: 2px solid #aaa; background: #fff; height: 30px; border-radius: 8px; margin-bottom: 9px; font-size: 11.5px; color: #999; padding: 5px 8px; }
+  .err { color: #c0392b; font-size: 11px; margin: -5px 0 9px; }
+  .big { font-family: Georgia, serif; font-size: 46px; font-weight: 700; line-height: 1.02; margin: 0 0 10px; }
+  .h2 { font-family: Georgia, serif; font-size: 19px; font-weight: 700; color: #555; margin: 0 0 8px; }
   .grid { display: grid; gap: 14px; }
-  .mark { position: absolute; width: 28px; height: 28px; border-radius: 50%; background: #d64535; color: #fff; font-weight: 700; font-size: 14px; display: grid; place-items: center; box-shadow: 0 0 0 3px #fff; z-index: 2; }
+  .mark { position: absolute; width: 28px; height: 28px; border-radius: 50%; background: #d64535; color: #fff; font-weight: 700; font-size: 14px; display: grid; place-items: center; box-shadow: 0 0 0 3px #fff; z-index: 5; }
   .notes { border-top: 2px solid #bbb; background: #fafafa; padding: 12px 34px 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 30px; font-size: 13.5px; color: #333; }
   .notes div { display: flex; gap: 8px; align-items: baseline; }
   .notes b { flex: none; width: 22px; height: 22px; border-radius: 50%; background: #d64535; color: #fff; font-size: 12px; display: grid; place-items: center; }
-  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-  th { text-align: left; border-bottom: 2px solid #999; padding: 6px; color: #666; font-size: 11.5px; text-transform: uppercase; }
+  /* лента дня — карточка внахлёст на полосу */
+  .tl { border: 2px solid #999; background: #fff; border-radius: 16px; padding: 14px 14px 10px; position: relative; margin-top: -50px; box-shadow: 0 10px 20px -12px rgba(0,0,0,.4); }
+  .tl-hours { display: grid; grid-template-columns: 120px repeat(12, 1fr); font-size: 10px; color: #777; margin: 6px 0 2px; }
+  .tl-row { display: grid; grid-template-columns: 120px 1fr; height: 30px; border-top: 1px solid #ddd; }
+  .tl-name { font-size: 11px; font-weight: 700; color: #666; align-self: center; }
+  .tl-track { position: relative; background-image: linear-gradient(to right, #ddd 1px, transparent 1px); background-size: calc(100% / 12) 100%; }
+  .blk { position: absolute; top: 4px; bottom: 4px; border-radius: 6px; background: #777; color: #fff; font-size: 9.5px; font-weight: 700; padding: 1px 4px; overflow: hidden; white-space: nowrap; }
+  .blk.alt { background: #a8a8a8; }
+  .ghost { position: absolute; top: 4px; bottom: 4px; border: 2px dashed #666; border-radius: 6px; background: #fff; }
+  .ghost::after { content: "15:00–15:45"; position: absolute; left: -2px; bottom: calc(100% + 2px); background: #555; color: #fff; font-size: 9px; font-weight: 700; padding: 0 4px; border-radius: 3px; }
+  .price { display: grid; grid-template-columns: auto 1fr auto 76px; gap: 8px; align-items: baseline; font-size: 13px; padding: 5px 0; border-top: 1px solid #e2e2e2; }
+  .price .dots { border-bottom: 2px dotted #bbb; }
+  .price .bar { display: inline-block; height: 6px; border-radius: 3px; background: #999; margin-right: 6px; }
+  .price b { font-size: 16px; text-align: right; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { text-align: left; padding: 4px 6px; color: #777; font-size: 11px; font-weight: 600; }
   td { border-bottom: 1px solid #ccc; padding: 7px 6px; vertical-align: top; }
-  .badge { border: 2px solid #888; border-radius: 10px; padding: 1px 8px; font-size: 11px; font-weight: 700; }
-  .ftr { border-top: 2px dashed #bbb; margin: 22px -34px 0; padding: 10px 34px 0; }
+  .dayrow td { border-bottom: 2px solid #666; font-family: Georgia, serif; font-weight: 700; font-size: 15px; padding-top: 12px; }
+  .t { font-size: 20px; font-weight: 800; color: #555; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #777; margin-right: 4px; }
+  .perf { border-top: 2px dashed #aaa; margin: 12px -12px; position: relative; }
+  .perf::before, .perf::after { content: ""; position: absolute; top: -8px; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 2px solid #999; }
+  .perf::before { left: -9px; } .perf::after { right: -9px; }
+  .facts > div { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 14px 0; border-top: 1px solid #ccc; }
+  .facts > div:first-child { border-top: 0; }
+  .facts .dt { font-family: Georgia, serif; font-weight: 700; font-size: 17px; color: #555; }
 </style>
 </head>
 <body>
@@ -48,54 +84,59 @@
   <div class="chrome"><i></i><i></i><i></i><span class="url">file:///…/project/index.html</span></div>
   <div class="title">Экран 1 — «Главная»</div>
   <div class="page">
-    <div class="hdr">
-      <span class="logo">ЛОГОТИП · Студия «Лаванда»</span>
-      <span class="nav"><span class="on">Главная</span><span>Записи</span><span>О проекте</span></span>
-    </div>
-    <span class="mark" style="right:300px; top:12px;">1</span>
-
-    <div class="grid" style="grid-template-columns: 1.4fr 1fr; align-items:center;">
-      <div>
-        <div class="line w30"></div>
-        <div class="h1">Заголовок: запись клиентов на услуги</div>
-        <div class="line w90"></div><div class="line w80"></div><div class="line w60"></div>
-        <div style="margin-top:16px; position:relative;">
-          <span class="btn main">Записать клиента</span> <span class="btn">Открыть журнал</span>
-          <span class="mark" style="left:-14px; top:-14px;">2</span>
+    <div class="band">
+      <div class="hdr">
+        <span class="logo"><span class="sprig"></span>Лаванда <small>журнал записи</small></span>
+        <span class="nav"><span class="on">Главная</span><span>Записи</span><span>О проекте</span></span>
+        <span class="mark" style="right:250px; top:8px;">1</span>
+      </div>
+      <div class="hero">
+        <div style="position:relative">
+          <span class="mark" style="left:-14px; top:-12px;">2</span>
+          <div class="cal"><span class="m">октябрь</span><span class="d">15</span><span class="w">четверг</span></div>
+          <div class="daynav"><span class="circle">‹</span><span class="btn light sm">Сегодня</span><span class="circle">›</span></div>
+        </div>
+        <div>
+          <div class="big">Завтра 4 записи</div>
+          <div class="line w60"></div>
+          <div style="margin-top:14px; display:flex; gap:10px;"><span class="btn accent">Записать клиента</span><span class="btn light">Открыть журнал</span></div>
         </div>
       </div>
-      <div class="grid" style="grid-template-columns: 1fr 1fr; gap:10px; position:relative;">
-        <span class="mark" style="left:-14px; top:-14px;">3</span>
-        <div class="box"><div class="line dark w30"></div><div class="line w70"></div><div style="font-size:11px">активных записей</div></div>
-        <div class="box"><div class="line dark w30"></div><div class="line w70"></div><div style="font-size:11px">на сегодня</div></div>
-        <div class="box" style="grid-column:1/-1"><div style="font-size:11px">ближайшая запись</div><div class="line w90"></div></div>
+    </div>
+
+    <div class="tl">
+      <span class="mark" style="left:-12px; top:-12px;">3</span>
+      <div class="h2" style="margin:0">Лента дня</div>
+      <div class="tl-hours"><span></span><span>09</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span></div>
+      <div class="tl-row"><span class="tl-name">Женская стрижка</span><div class="tl-track"><span class="blk" style="left:8.33%; width:8.33%">10:00 Айгерим</span></div></div>
+      <div class="tl-row"><span class="tl-name">Мужская стрижка</span><div class="tl-track"><span class="blk" style="left:20.8%; width:5.55%">11:30</span></div></div>
+      <div class="tl-row"><span class="tl-name">Окрашивание</span><div class="tl-track"><span class="blk" style="left:25%; width:16.7%">12:00 Әлия</span></div></div>
+      <div class="tl-row"><span class="tl-name">Укладка</span><div class="tl-track"><span class="ghost" style="left:50%; width:6.25%"></span></div></div>
+      <div class="tl-row"><span class="tl-name">Маникюр</span><div class="tl-track"><span class="blk alt" style="left:41.7%; width:8.33%">14:00 Мария</span></div></div>
+      <div class="tl-row"><span class="tl-name">Педикюр</span><div class="tl-track"></div></div>
+    </div>
+
+    <div class="h2" style="margin-top:22px; font-size:24px">Прайс-лист</div>
+    <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 10px 50px; position:relative;">
+      <span class="mark" style="left:-34px; top:-6px;">4</span>
+      <div>
+        <div class="lbl"><i>Волосы</i></div>
+        <div class="price"><span>Женская стрижка</span><span class="dots"></span><span><i class="bar" style="width:24px"></i>60 мин</span><b>8 000 ₸</b></div>
+        <div class="price"><span>Мужская стрижка</span><span class="dots"></span><span><i class="bar" style="width:16px"></i>40 мин</span><b>5 000 ₸</b></div>
+        <div class="price"><span>Окрашивание</span><span class="dots"></span><span><i class="bar" style="width:48px"></i>120 мин</span><b>20 000 ₸</b></div>
+      </div>
+      <div>
+        <div class="lbl"><i>Ногти</i></div>
+        <div class="price"><span>Маникюр</span><span class="dots"></span><span><i class="bar" style="width:24px"></i>60 мин</span><b>7 000 ₸</b></div>
+        <div class="price"><span>Педикюр</span><span class="dots"></span><span><i class="bar" style="width:30px"></i>75 мин</span><b>9 000 ₸</b></div>
       </div>
     </div>
-
-    <div class="h2" style="margin-top:26px;">Услуги студии</div>
-    <div class="grid" style="grid-template-columns: repeat(6, 1fr); gap:10px; position:relative;">
-      <span class="mark" style="left:-14px; top:-14px;">4</span>
-      <div class="box"><div class="line w50"></div><div class="line dark w90"></div><div class="line w40"></div><div class="line dark w50"></div></div>
-      <div class="box"><div class="line w50"></div><div class="line dark w90"></div><div class="line w40"></div><div class="line dark w50"></div></div>
-      <div class="box"><div class="line w50"></div><div class="line dark w90"></div><div class="line w40"></div><div class="line dark w50"></div></div>
-      <div class="box"><div class="line w50"></div><div class="line dark w90"></div><div class="line w40"></div><div class="line dark w50"></div></div>
-      <div class="box"><div class="line w50"></div><div class="line dark w90"></div><div class="line w40"></div><div class="line dark w50"></div></div>
-      <div class="box"><div class="line w50"></div><div class="line dark w90"></div><div class="line w40"></div><div class="line dark w50"></div></div>
-    </div>
-
-    <div class="h2" style="margin-top:24px;">Как это работает</div>
-    <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap:10px;">
-      <div class="box"><b>1</b><div class="line w60"></div><div class="line w90"></div></div>
-      <div class="box"><b>2</b><div class="line w60"></div><div class="line w90"></div></div>
-      <div class="box"><b>3</b><div class="line w60"></div><div class="line w90"></div></div>
-    </div>
-    <div class="ftr"><div class="line w50"></div></div>
   </div>
   <div class="notes">
-    <div><b>1</b>Меню из трёх разделов; текущий раздел выделен.</div>
-    <div><b>2</b>Кнопки перехода к форме новой записи и к журналу.</div>
-    <div><b>3</b>Сводка: активные записи, записи на сегодня, ближайшая запись.</div>
-    <div><b>4</b>Карточки услуг: категория, название, длительность, цена.</div>
+    <div><b>1</b>Цветная полоса шапки с меню из трёх разделов; текущий раздел подчёркнут.</div>
+    <div><b>2</b>Отрывной календарь: число дня и переход по дням (листок отрывается).</div>
+    <div><b>3</b>Лента дня внахлёст на полосу: строка на мастера, длина блока — длительность услуги; пунктир — будущая запись.</div>
+    <div><b>4</b>Прайс-лист как меню салона: название, полоска длительности, цена в тенге.</div>
   </div>
 </section>
 
@@ -104,54 +145,72 @@
   <div class="chrome"><i></i><i></i><i></i><span class="url">file:///…/project/bookings.html</span></div>
   <div class="title">Экран 2 — «Записи» (CRUD)</div>
   <div class="page">
-    <div class="hdr">
-      <span class="logo">ЛОГОТИП · Студия «Лаванда»</span>
-      <span class="nav"><span>Главная</span><span class="on">Записи</span><span>О проекте</span></span>
-    </div>
-    <div class="h1">Журнал записей</div>
-    <div class="line w40" style="margin-bottom:16px"></div>
-
-    <div class="grid" style="grid-template-columns: 300px 1fr; align-items:start;">
-      <div class="box" style="background:#fff;">
-        <span class="mark" style="left:-14px; top:-14px;">1</span>
-        <div class="h2">Новая запись / Редактирование</div>
-        <div class="lbl">Имя клиента *</div><div class="inp" style="border-color:#c0392b">Анна Смирнова</div>
-        <div class="err">Укажите имя клиента. <span class="mark" style="position:static; display:inline-grid; width:22px; height:22px; font-size:12px; box-shadow:none; vertical-align:middle;">2</span></div>
-        <div class="lbl">Телефон *</div><div class="inp">+7 900 000-00-00</div>
-        <div class="lbl">Услуга *</div><div class="inp">— выберите услугу — ▾</div>
-        <div class="grid" style="grid-template-columns:1fr 1fr; gap:8px;">
-          <div><div class="lbl">Дата *</div><div class="inp">дд.мм.гггг</div></div>
-          <div><div class="lbl">Время *</div><div class="inp">--:--</div></div>
+    <div class="band" style="padding-bottom:60px">
+      <div class="hdr">
+        <span class="logo"><span class="sprig"></span>Лаванда <small>журнал записи</small></span>
+        <span class="nav"><span>Главная</span><span class="on">Записи</span><span>О проекте</span></span>
+      </div>
+      <div class="hero" style="grid-template-columns: 140px 1fr;">
+        <div>
+          <div class="cal" style="padding-top:20px"><span class="m">октябрь</span><span class="d" style="font-size:54px">15</span><span class="w">четверг</span></div>
         </div>
-        <div class="lbl">Статус (только при редактировании)</div><div class="inp">Запланирована ▾</div>
-        <div class="lbl">Комментарий</div><div class="inp" style="height:50px">до 200 символов</div>
+        <div>
+          <div class="big" style="font-size:36px">Журнал записей</div>
+          <div class="h2" style="color:#fff; margin:0">Завтра 4 записи</div>
+          <div class="line w50"></div>
+        </div>
+      </div>
+    </div>
+    <div class="tl" style="margin-top:-40px">
+      <span class="mark" style="left:-12px; top:-12px;">1</span>
+      <div class="tl-hours"><span></span><span>09</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span></div>
+      <div class="tl-row" style="height:24px"><span class="tl-name">Женская стрижка</span><div class="tl-track"><span class="blk" style="left:8.33%; width:8.33%">10:00</span></div></div>
+      <div class="tl-row" style="height:24px"><span class="tl-name">Мужская стрижка</span><div class="tl-track"><span class="blk" style="left:20.8%; width:5.55%">11:30</span></div></div>
+      <div class="tl-row" style="height:24px"><span class="tl-name">…ещё 4 услуги</span><div class="tl-track"><span class="blk" style="left:25%; width:16.7%">12:00</span></div></div>
+    </div>
+
+    <div class="grid" style="grid-template-columns: 290px 1fr; margin-top:18px; align-items:start; gap:24px;">
+      <div class="box">
+        <span class="mark" style="left:-14px; top:-14px;">2</span>
+        <div class="h2">Новая запись / Редактирование</div>
+        <div class="lbl">Имя клиента *</div><div class="inp" style="border-color:#c0392b"></div>
+        <div class="err">Укажите имя клиента.</div>
+        <div class="lbl">Телефон *</div><div class="inp">+7 701 000-00-00</div>
+        <div class="lbl">Услуга *</div><div class="inp">Укладка, 45 мин ▾</div>
+        <div class="grid" style="grid-template-columns:1fr 1fr; gap:8px;">
+          <div><div class="lbl">Дата *</div><div class="inp">15.10.2026</div></div>
+          <div><div class="lbl">Время *</div><div class="inp">15:00</div></div>
+        </div>
+        <div class="lbl">Комментарий</div><div class="inp" style="height:36px"></div>
+        <div class="perf"></div>
         <span class="btn main">Создать запись</span> <span class="btn">Очистить</span>
       </div>
 
-      <div class="box" style="background:#fff;">
-        <div class="h2">Список записей <span style="float:right; font-weight:400; font-size:12px;">Показано N из M</span></div>
+      <div>
+        <div class="h2" style="font-size:24px">Все записи <span style="float:right; font-family:'Segoe UI'; font-weight:400; font-size:12px;">Показано N из M</span></div>
         <div class="grid" style="grid-template-columns: 1.2fr 1fr 1fr auto; gap:8px; align-items:end; position:relative;">
-          <span class="mark" style="left:-30px; top:-30px;">3</span>
+          <span class="mark" style="left:-30px; top:-6px;">3</span>
           <div><div class="lbl">Поиск</div><div class="inp" style="margin:0">имя или телефон</div></div>
           <div><div class="lbl">Статус</div><div class="inp" style="margin:0">Все ▾</div></div>
           <div><div class="lbl">Дата</div><div class="inp" style="margin:0">дд.мм.гггг</div></div>
           <span class="btn">Сбросить</span>
         </div>
-        <table style="margin-top:12px; position:relative;">
-          <tr><th>Дата и время</th><th>Клиент</th><th>Услуга</th><th>Статус</th><th style="position:relative">Действия <span class="mark" style="right:-6px; top:-10px;">4</span></th></tr>
-          <tr><td><b>15.10.2026</b><br>чт, 10:00–11:00</td><td><b>Имя клиента</b><br>+7 900 …<br><i>комментарий</i></td><td>Женская стрижка<br>1 500 ₽</td><td><span class="badge">Запланирована</span></td><td><span class="btn sm">Изменить</span> <span class="btn sm">Выполнена</span><br><span class="btn sm" style="margin-top:4px">Отменить</span> <span class="btn sm" style="margin-top:4px">Удалить</span></td></tr>
-          <tr><td><b>15.10.2026</b><br>чт, 11:30–12:10</td><td><b>Имя клиента</b><br>+7 900 …</td><td>Мужская стрижка<br>900 ₽</td><td><span class="badge">Выполнена</span></td><td><span class="btn sm">Изменить</span> <span class="btn sm">Удалить</span></td></tr>
-          <tr style="color:#aaa"><td><b>16.10.2026</b><br>пт, 12:00–14:00</td><td><b><s>Имя клиента</s></b><br>+7 900 …</td><td>Окрашивание<br>3 500 ₽</td><td><span class="badge" style="border-color:#bbb">Отменена</span></td><td><span class="btn sm">Изменить</span> <span class="btn sm">Удалить</span></td></tr>
-          <tr><td><b>17.10.2026</b><br>сб, 15:00–16:00</td><td><b>Имя клиента</b><br>+7 900 …</td><td>Маникюр<br>1 300 ₽</td><td><span class="badge">Запланирована</span></td><td><span class="btn sm">Изменить</span> <span class="btn sm">Выполнена</span><br><span class="btn sm" style="margin-top:4px">Отменить</span> <span class="btn sm" style="margin-top:4px">Удалить</span></td></tr>
+        <table style="margin-top:8px; position:relative;">
+          <tr><th>Время</th><th>Клиент</th><th>Услуга</th><th>Статус</th><th style="position:relative">Действия <span class="mark" style="right:-4px; top:-8px;">4</span></th></tr>
+          <tr class="dayrow"><td colspan="5">Четверг, 15 октября <span style="float:right; font-family:'Segoe UI'; font-weight:400; font-size:11px;">3 записи</span></td></tr>
+          <tr><td><span class="t">10:00</span><br>до 11:00</td><td><b>Имя клиента</b><br>+7 701 …<br><i>комментарий</i></td><td>Женская стрижка<br>8 000 ₸</td><td><span class="dot"></span>Запланирована</td><td><span class="btn sm">Изменить</span> <span class="btn sm">Выполнена</span><br><span class="btn sm" style="margin-top:3px">Отменить</span> <span class="btn sm" style="margin-top:3px">Удалить</span></td></tr>
+          <tr><td><span class="t">11:30</span><br>до 12:10</td><td><b>Имя клиента</b><br>+7 705 …</td><td>Мужская стрижка<br>5 000 ₸</td><td><span class="dot"></span>Выполнена</td><td><span class="btn sm">Изменить</span> <span class="btn sm">Удалить</span></td></tr>
+          <tr class="dayrow"><td colspan="5">Пятница, 16 октября <span style="float:right; font-family:'Segoe UI'; font-weight:400; font-size:11px;">1 запись</span></td></tr>
+          <tr style="color:#aaa"><td><span class="t" style="color:#aaa">12:00</span><br>до 14:00</td><td><b><s>Имя клиента</s></b><br>+7 747 …</td><td>Окрашивание<br>20 000 ₸</td><td><span class="dot" style="background:#fff; border:2px solid #aaa"></span>Отменена</td><td><span class="btn sm">Изменить</span> <span class="btn sm">Удалить</span></td></tr>
         </table>
       </div>
     </div>
   </div>
   <div class="notes">
-    <div><b>1</b>Одна форма для создания и редактирования; обязательные поля отмечены «*».</div>
-    <div><b>2</b>Сообщение об ошибке выводится под полем, поле выделяется красным.</div>
-    <div><b>3</b>Поиск по имени/телефону, фильтры по статусу и дате, сброс фильтров.</div>
-    <div><b>4</b>Действия: изменить, отметить выполнение, отменить и удалить (с подтверждением).</div>
+    <div><b>1</b>Лента дня: щелчок по свободному времени подставляет услугу, дату и время в форму, щелчок по блоку открывает запись.</div>
+    <div><b>2</b>Форма-талон для создания и редактирования; ошибка выводится под полем.</div>
+    <div><b>3</b>Поиск по имени или телефону, фильтры по статусу и дате, сброс.</div>
+    <div><b>4</b>Записи сгруппированы по дням; действия: изменить, выполнена, отменить, удалить.</div>
   </div>
 </section>
 
@@ -160,44 +219,27 @@
   <div class="chrome"><i></i><i></i><i></i><span class="url">file:///…/project/about.html</span></div>
   <div class="title">Экран 3 — «О проекте»</div>
   <div class="page">
-    <div class="hdr">
-      <span class="logo">ЛОГОТИП · Студия «Лаванда»</span>
-      <span class="nav"><span>Главная</span><span>Записи</span><span class="on">О проекте</span></span>
+    <div class="band short">
+      <div class="hdr">
+        <span class="logo"><span class="sprig"></span>Лаванда <small>журнал записи</small></span>
+        <span class="nav"><span>Главная</span><span>Записи</span><span class="on">О проекте</span></span>
+      </div>
+      <div class="big" style="font-size:34px; margin-top:8px">О проекте</div>
+      <div class="line w50"></div>
     </div>
-    <div class="h1">О проекте</div>
-    <div class="line w50" style="margin-bottom:16px"></div>
-    <div class="grid" style="grid-template-columns: 1fr 1fr;">
-      <div class="box" style="background:#fff">
-        <span class="mark" style="left:-14px; top:-14px;">1</span>
-        <div class="h2">Цель</div>
-        <div class="line w90"></div><div class="line w80"></div><div class="line w90"></div><div class="line w50"></div>
-        <div class="h2" style="margin-top:12px">Функции</div>
-        <div class="line w70"></div><div class="line w60"></div><div class="line w70"></div><div class="line w50"></div>
-      </div>
-      <div class="box" style="background:#fff">
-        <span class="mark" style="left:-14px; top:-14px;">2</span>
-        <div class="h2">Команда</div>
-        <table><tr><td><b>Участник 1</b></td><td>роль, зона ответственности</td></tr><tr><td><b>Участник 2</b></td><td>роль, зона ответственности</td></tr><tr><td><b>Участник 3</b></td><td>роль, зона ответственности</td></tr></table>
-        <div class="h2" style="margin-top:12px">Технологии</div>
-        <div class="line w80"></div>
-      </div>
-      <div class="box" style="background:#fff">
-        <span class="mark" style="left:-14px; top:-14px;">3</span>
-        <div class="h2">Безопасность и ограничения</div>
-        <div class="line w80"></div><div class="line w70"></div><div class="line w90"></div><div class="line w60"></div><div class="line w70"></div>
-      </div>
-      <div class="box" style="background:#fff">
-        <span class="mark" style="left:-14px; top:-14px;">4</span>
-        <div class="h2">Данные</div>
-        <div class="line w90"></div><div class="line w60"></div>
-        <div style="margin-top:12px"><span class="btn main">Удалить все записи</span></div>
-      </div>
+    <div class="facts" style="position:relative; margin-top:16px">
+      <span class="mark" style="left:-14px; top:4px;">1</span>
+      <div><span class="dt">Зачем</span><div><div class="line w90"></div><div class="line w80"></div><div class="line w60"></div></div></div>
+      <div><span class="dt">Что умеет</span><div><div class="line w70"></div><div class="line w60"></div><div class="line w80"></div><div class="line w50"></div></div></div>
+      <div style="position:relative"><span class="mark" style="left:-14px; top:10px;">2</span><span class="dt">Команда</span><div><div class="line w60"></div><div class="line w60"></div><div class="line w60"></div></div></div>
+      <div><span class="dt">Технологии</span><div><div class="line w80"></div></div></div>
+      <div style="position:relative"><span class="mark" style="left:-14px; top:10px;">3</span><span class="dt">Безопасность</span><div><div class="line w70"></div><div class="line w60"></div><div class="line w80"></div></div></div>
+      <div style="position:relative"><span class="mark" style="left:-14px; top:10px;">4</span><span class="dt">Данные</span><div><div class="line w80"></div><div class="line w50"></div><div style="margin-top:10px"><span class="btn main">Удалить все записи</span></div></div></div>
     </div>
-    <div class="ftr"><div class="line w50"></div></div>
   </div>
   <div class="notes">
-    <div><b>1</b>Назначение системы и список функций.</div>
-    <div><b>2</b>Состав команды, роли и используемые технологии.</div>
+    <div><b>1</b>Страница для чтения: слева вопрос, справа ответ.</div>
+    <div><b>2</b>Состав команды и роли.</div>
     <div><b>3</b>Меры безопасности и ограничения учебного хранилища.</div>
     <div><b>4</b>Сведения о хранении данных и очистка хранилища с подтверждением.</div>
   </div>
