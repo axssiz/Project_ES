@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>О проекте — Запись на услуги, студия «Лаванда»</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="about">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true">Л</span>
+        <span>Студия «Лаванда»</span>
+      </a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="index.html" data-nav="home">Главная</a>
+        <a href="bookings.html" data-nav="bookings">Записи</a>
+        <a href="about.html" data-nav="about">О проекте</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-title">
+      <h1>О проекте</h1>
+      <p class="muted">Итоговый проект производственной практики «Проектирование и создание веб-сайта».</p>
+    </div>
+
+    <div class="about-grid">
+      <section class="card">
+        <h2>Цель</h2>
+        <p>
+          Заменить бумажный журнал записи небольшой студии красоты простым веб-приложением:
+          администратор быстро создаёт запись, видит список на любой день, может изменить
+          или отменить запись, а система не даёт записать двух клиентов к одному мастеру
+          на пересекающееся время.
+        </p>
+        <h3>Функции</h3>
+        <ul class="list">
+          <li>создание записи с проверкой обязательных полей;</li>
+          <li>просмотр списка с поиском и фильтрами по статусу и дате;</li>
+          <li>редактирование записи и смена статуса;</li>
+          <li>отмена записи и удаление с подтверждением;</li>
+          <li>проверка занятости времени с учётом длительности услуги;</li>
+          <li>сохранение данных в localStorage.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Команда</h2>
+        <table class="plain-table">
+          <tbody>
+            <tr><th>Фамилия И. О. (1)</th><td>аналитик: анализ, ТЗ, журнал изменений, тестирование</td></tr>
+            <tr><th>Фамилия И. О. (2)</th><td>проектировщик: диаграммы, модель данных, макеты</td></tr>
+            <tr><th>Фамилия И. О. (3)</th><td>разработчик: HTML, CSS, JavaScript, localStorage</td></tr>
+          </tbody>
+        </table>
+        <h3>Технологии</h3>
+        <p>HTML5, CSS3, JavaScript (без фреймворков), Web Storage API (localStorage).</p>
+      </section>
+
+      <section class="card">
+        <h2>Безопасность и ограничения</h2>
+        <ul class="list">
+          <li>пароли и регистрация не используются;</li>
+          <li>в демонстрации применяются только вымышленные имена и телефоны;</li>
+          <li>пустую запись сохранить нельзя, поля проверяются по формату;</li>
+          <li>введённый текст выводится как текст, а не как HTML-код;</li>
+          <li>удаление и отмена требуют подтверждения;</li>
+          <li>localStorage — учебное хранилище: данные видны только в этом браузере и не защищены шифрованием.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Данные</h2>
+        <p>
+          Записи хранятся в localStorage под ключом <code>lavanda.bookings</code> в виде
+          массива объектов JSON. Сейчас в хранилище: <strong id="aboutCount">0</strong>.
+        </p>
+        <p class="muted">Версия 1.2. Изменения по журналу: проверка занятости времени с учётом длительности
+          услуги (1.1); отмена записи меняет статус на «Отменена» вместо удаления (1.2).</p>
+        <button type="button" class="btn btn-danger" id="clearAllBtn">Удалить все записи</button>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Учебный проект · группа ПО2401 · 2026 · Данные хранятся только в этом браузере (localStorage)
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

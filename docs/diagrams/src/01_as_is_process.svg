@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2b2b2b"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="700" fill="#ffffff"/>
+  <text x="600" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#222">Схема текущего процесса записи («как есть»): бумажный журнал</text>
+
+  <!-- Дорожки -->
+  <rect x="20" y="50" width="1160" height="470" fill="none" stroke="#555" stroke-width="1.5"/>
+  <rect x="20" y="50" width="50" height="140" fill="#f1eef8" stroke="#555" stroke-width="1.5"/>
+  <rect x="20" y="190" width="50" height="200" fill="#f1eef8" stroke="#555" stroke-width="1.5"/>
+  <rect x="20" y="390" width="50" height="130" fill="#f1eef8" stroke="#555" stroke-width="1.5"/>
+  <line x1="70" y1="190" x2="1180" y2="190" stroke="#555" stroke-width="1.5"/>
+  <line x1="70" y1="390" x2="1180" y2="390" stroke="#555" stroke-width="1.5"/>
+  <text transform="translate(50,120) rotate(-90)" text-anchor="middle" font-size="16" font-weight="700" fill="#333">Клиент</text>
+  <text transform="translate(50,290) rotate(-90)" text-anchor="middle" font-size="16" font-weight="700" fill="#333">Администратор</text>
+  <text transform="translate(50,455) rotate(-90)" text-anchor="middle" font-size="16" font-weight="700" fill="#333">Мастер</text>
+
+  <g font-size="15" fill="#222" text-anchor="middle">
+    <!-- Начало -->
+    <circle cx="110" cy="120" r="12" fill="#2b2b2b"/>
+    <line x1="122" y1="120" x2="150" y2="120" stroke="#2b2b2b" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+    <rect x="150" y="90" width="200" height="60" rx="10" fill="#fff" stroke="#2b2b2b" stroke-width="1.6"/>
+    <text x="250" y="115">Звонит или приходит,</text>
+    <text x="250" y="135">называет услугу и время</text>
+
+    <line x1="250" y1="150" x2="250" y2="260" stroke="#2b2b2b" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+    <rect x="150" y="260" width="200" height="60" rx="10" fill="#fff" stroke="#2b2b2b" stroke-width="1.6"/>
+    <text x="250" y="285">Открывает бумажный</text>
+    <text x="250" y="305">журнал на нужную дату</text>
+
+    <line x1="350" y1="290" x2="410" y2="290" stroke="#2b2b2b" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+    <rect x="410" y="260" width="200" height="60" rx="10" fill="#fff" stroke="#2b2b2b" stroke-width="1.6"/>
+    <text x="510" y="285">Ищет свободное время,</text>
+    <text x="510" y="305">листая страницы</text>
+
+    <line x1="610" y1="290" x2="650" y2="290" stroke="#2b2b2b" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+    <polygon points="650,290 720,245 790,290 720,335" fill="#fff" stroke="#2b2b2b" stroke-width="1.6"/>
+    <text x="720" y="286">Время</text>
+    <text x="720" y="304">свободно?</text>
+
+    <!-- нет -->
+    <line x1="720" y1="245" x2="720" y2="150" stroke="#2b2b2b" stroke-width="1.6" marker-end="url(#arrow)"/>
+    <text x="740" y="205" font-size="14" font-style="italic">нет</text>
+    <rect x="620" y="90" width="200" height="60" rx="10" fill="#fff" stroke="#2b2b2b" stroke-width="1.6"/>
+    <text x="720" y="115">Выбирает другое время</text>
+    <text x="720" y="135">из предложенного</text>
+    <polyline points="620,120 510,120 510,260" fill="none" stroke="#2b2b2b" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+    <!-- да -->
+    <line x1="790" y1="290" x2="860" y2="290" stroke="#2b2b2b" stroke-width="1.6" marker-end="url(#arrow)"/>
+    <text x="822" y="280" font-size="14" font-style="italic">да</text>
+    <rect x="860" y="260" width="220" height="60" rx="10" fill="#fff" stroke="#2b2b2b" stroke-width="1.6"/>
+    <text x="970" y="285">Записывает от руки: имя,</text>
+    <text x="970" y="305">телефон, услугу, время</text>
+
+    <line x1="970" y1="320" x2="970" y2="425" stroke="#2b2b2b" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+    <rect x="860" y="425" width="220" height="60" rx="10" fill="#fff" stroke="#2b2b2b" stroke-width="1.6"/>
+    <text x="970" y="450">Утром смотрит журнал,</text>
+    <text x="970" y="470">узнаёт список клиентов</text>
+
+    <line x1="1080" y1="455" x2="1114" y2="455" stroke="#2b2b2b" stroke-width="1.6" marker-end="url(#arrow)"/>
+    <circle cx="1130" cy="455" r="15" fill="#fff" stroke="#2b2b2b" stroke-width="2"/>
+    <circle cx="1130" cy="455" r="9" fill="#2b2b2b"/>
+  </g>
+
+  <!-- Маркеры проблем -->
+  <g font-size="14" font-weight="700" fill="#fff" text-anchor="middle">
+    <circle cx="604" cy="258" r="13" fill="#c0392b"/><text x="604" y="263">1</text>
+    <circle cx="788" cy="248" r="13" fill="#c0392b"/><text x="788" y="253">2</text>
+    <circle cx="1078" cy="258" r="13" fill="#c0392b"/><text x="1078" y="263">3</text>
+    <circle cx="1078" cy="423" r="13" fill="#c0392b"/><text x="1078" y="428">4</text>
+  </g>
+
+  <!-- Список проблем -->
+  <rect x="20" y="540" width="1160" height="140" rx="8" fill="#fdf2f0" stroke="#e3b5ae"/>
+  <text x="40" y="568" font-size="16" font-weight="700" fill="#8e2a1f">Проблемы текущего процесса</text>
+  <g font-size="14.5" fill="#333">
+    <circle cx="50" cy="597" r="10" fill="#c0392b"/><text x="50" y="602" fill="#fff" font-weight="700" text-anchor="middle" font-size="13">1</text>
+    <text x="70" y="602">Поиск свободного времени вручную занимает время, клиент ждёт на линии.</text>
+    <circle cx="50" cy="630" r="10" fill="#c0392b"/><text x="50" y="635" fill="#fff" font-weight="700" text-anchor="middle" font-size="13">2</text>
+    <text x="70" y="635">Длительность услуг не учитывается — возможна двойная запись.</text>
+    <circle cx="640" cy="597" r="10" fill="#c0392b"/><text x="640" y="602" fill="#fff" font-weight="700" text-anchor="middle" font-size="13">3</text>
+    <text x="660" y="602">Записи от руки: неразборчиво, исправления, зачёркнутые отмены.</text>
+    <circle cx="640" cy="630" r="10" fill="#c0392b"/><text x="640" y="635" fill="#fff" font-weight="700" text-anchor="middle" font-size="13">4</text>
+    <text x="660" y="635">Журнал в одном экземпляре: нет поиска, фильтров и истории изменений.</text>
+    <text x="70" y="664" fill="#666" font-style="italic">Переносы и отмены по телефону проходят тот же путь: поиск записи в журнале и исправление от руки.</text>
+  </g>
+</svg>

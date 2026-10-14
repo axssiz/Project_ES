@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="330" viewBox="0 0 1100 330" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a3a86"/>
+    </marker>
+  </defs>
+  <rect width="1100" height="330" fill="#ffffff"/>
+  <text x="550" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#222">Упрощённый цикл DevOps в учебном проекте</text>
+
+  <g fill="#f3effc" stroke="#4a3a86" stroke-width="1.8">
+    <rect x="40" y="80" width="220" height="110" rx="14"/>
+    <rect x="310" y="80" width="220" height="110" rx="14"/>
+    <rect x="580" y="80" width="220" height="110" rx="14"/>
+    <rect x="850" y="80" width="220" height="110" rx="14"/>
+  </g>
+  <g text-anchor="middle" fill="#222">
+    <text x="150" y="118" font-size="17" font-weight="700">1. Изменить код</text>
+    <text x="150" y="144" font-size="14" fill="#444">задача берётся</text>
+    <text x="150" y="163" font-size="14" fill="#444">из Kanban-доски</text>
+
+    <text x="420" y="118" font-size="17" font-weight="700">2. Проверить</text>
+    <text x="420" y="144" font-size="14" fill="#444">открыть в браузере,</text>
+    <text x="420" y="163" font-size="14" fill="#444">пройти тест-кейсы</text>
+
+    <text x="690" y="118" font-size="17" font-weight="700">3. Сохранить версию</text>
+    <text x="690" y="144" font-size="14" fill="#444">git commit или архив</text>
+    <text x="690" y="163" font-size="14" fill="#444">с номером версии</text>
+
+    <text x="960" y="118" font-size="17" font-weight="700">4. Показать</text>
+    <text x="960" y="144" font-size="14" fill="#444">команде / заказчику,</text>
+    <text x="960" y="163" font-size="14" fill="#444">собрать замечания</text>
+  </g>
+  <g stroke="#4a3a86" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <line x1="260" y1="135" x2="308" y2="135"/>
+    <line x1="530" y1="135" x2="578" y2="135"/>
+    <line x1="800" y1="135" x2="848" y2="135"/>
+    <polyline points="960,190 960,260 150,260 150,192"/>
+  </g>
+  <text x="555" y="285" text-anchor="middle" font-size="14.5" fill="#4a3a86" font-style="italic">обратная связь → новая задача или исправление (журнал изменений)</text>
+  <text x="550" y="315" text-anchor="middle" font-size="13" fill="#666">Автоматический CI/CD не используется: проверка выполняется вручную по таблице тестов перед каждой версией.</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="440" viewBox="0 0 1100 440" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1100" height="440" fill="#ffffff"/>
+  <text x="550" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#222">План этапов проекта по модели Waterfall</text>
+
+  <!-- Сетка недель: 4 × 170 px, начиная с x = 380 -->
+  <g font-size="13.5" fill="#333" text-anchor="middle">
+    <rect x="380" y="50" width="680" height="46" fill="#f3effc" stroke="#cfc6e8"/>
+    <line x1="550" y1="50" x2="550" y2="400" stroke="#cfc6e8"/>
+    <line x1="720" y1="50" x2="720" y2="400" stroke="#cfc6e8"/>
+    <line x1="890" y1="50" x2="890" y2="400" stroke="#cfc6e8"/>
+    <rect x="380" y="50" width="680" height="350" fill="none" stroke="#cfc6e8"/>
+    <text x="465" y="70" font-weight="700">Неделя 1</text><text x="465" y="88" fill="#666">13.10 – 19.10</text>
+    <text x="635" y="70" font-weight="700">Неделя 2</text><text x="635" y="88" fill="#666">20.10 – 26.10</text>
+    <text x="805" y="70" font-weight="700">Неделя 3</text><text x="805" y="88" fill="#666">27.10 – 02.11</text>
+    <text x="975" y="70" font-weight="700">Неделя 4</text><text x="975" y="88" fill="#666">03.11 – 09.11</text>
+  </g>
+
+  <g font-size="14.5" fill="#222">
+    <text x="30" y="70" font-weight="700" fill="#555">Этап</text>
+    <text x="30" y="125">1. Анализ предметной области</text>
+    <text x="30" y="163">2. Требования и техническое задание</text>
+    <text x="30" y="201">3. Проектирование: IDEF0, UML, данные</text>
+    <text x="30" y="239">4. Макеты интерфейса</text>
+    <text x="30" y="277">5. Разработка сайта (HTML, CSS, JS)</text>
+    <text x="30" y="315">6. Тестирование и исправления</text>
+    <text x="30" y="353">7. Итоговый отчёт и презентация</text>
+    <text x="30" y="391">8. Защита проекта</text>
+  </g>
+  <g stroke="#eee"><line x1="20" y1="134" x2="1060" y2="134"/><line x1="20" y1="172" x2="1060" y2="172"/><line x1="20" y1="210" x2="1060" y2="210"/><line x1="20" y1="248" x2="1060" y2="248"/><line x1="20" y1="286" x2="1060" y2="286"/><line x1="20" y1="324" x2="1060" y2="324"/><line x1="20" y1="362" x2="1060" y2="362"/></g>
+
+  <!-- Полосы этапов -->
+  <g>
+    <rect x="382" y="110" width="66" height="22" rx="5" fill="#8e7cc3"/>
+    <rect x="448" y="148" width="102" height="22" rx="5" fill="#8e7cc3"/>
+    <rect x="550" y="186" width="102" height="22" rx="5" fill="#6b4fbb"/>
+    <rect x="652" y="224" width="68" height="22" rx="5" fill="#6b4fbb"/>
+    <rect x="720" y="262" width="102" height="22" rx="5" fill="#4a3a86"/>
+    <rect x="822" y="300" width="51" height="22" rx="5" fill="#4a3a86"/>
+    <rect x="873" y="338" width="85" height="22" rx="5" fill="#2e7d4f"/>
+    <polygon points="983,376 995,388 983,400 971,388" fill="#c0392b"/>
+  </g>
+  <g stroke="#555" stroke-width="1.3" fill="none">
+    <polyline points="448,132 448,148"/>
+    <polyline points="550,170 550,186"/>
+    <polyline points="652,208 652,224"/>
+    <polyline points="720,246 720,262"/>
+    <polyline points="822,284 822,300"/>
+    <polyline points="873,322 873,338"/>
+    <polyline points="958,360 958,388 969,388"/>
+  </g>
+  <g font-size="12.5" fill="#444">
+    <text x="455" y="126">анализ</text>
+    <text x="556" y="164">черновик и итог ТЗ</text>
+    <text x="658" y="202">4 диаграммы</text>
+    <text x="726" y="240">3 экрана</text>
+    <text x="828" y="278">3 раздела + CRUD</text>
+    <text x="879" y="316">15 тестов</text>
+    <text x="964" y="354">отчёт, слайды</text>
+    <text x="1003" y="392">защита</text>
+  </g>
+  <text x="30" y="428" font-size="13" fill="#666" font-style="italic">Каждый этап начинается после завершения предыдущего; результат этапа — входные данные для следующего.</text>
+</svg>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Записи — Запись на услуги, студия «Лаванда»</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="bookings">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true">Л</span>
+        <span>Студия «Лаванда»</span>
+      </a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="index.html" data-nav="home">Главная</a>
+        <a href="bookings.html" data-nav="bookings">Записи</a>
+        <a href="about.html" data-nav="about">О проекте</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-title">
+      <h1>Журнал записей</h1>
+      <p class="muted">Создание, просмотр, изменение, отмена и удаление записей клиентов.</p>
+    </div>
+
+    <div class="alert alert-warning" id="storageWarning" hidden></div>
+
+    <div class="bookings-layout">
+      <section class="card form-card" aria-labelledby="formTitle">
+        <h2 id="formTitle">Новая запись</h2>
+        <form id="bookingForm" novalidate>
+          <input type="hidden" id="bookingId">
+
+          <div class="field">
+            <label for="clientName">Имя клиента <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="clientName" name="clientName" maxlength="60" autocomplete="off"
+                   placeholder="Например: Анна Смирнова" aria-describedby="clientNameError">
+            <p class="field-error" id="clientNameError"></p>
+          </div>
+
+          <div class="field">
+            <label for="phone">Телефон <span class="req" aria-hidden="true">*</span></label>
+            <input type="tel" id="phone" name="phone" maxlength="20" autocomplete="off"
+                   placeholder="+7 900 000-00-00" aria-describedby="phoneError">
+            <p class="field-error" id="phoneError"></p>
+          </div>
+
+          <div class="field">
+            <label for="serviceId">Услуга <span class="req" aria-hidden="true">*</span></label>
+            <select id="serviceId" name="serviceId" aria-describedby="serviceIdError">
+              <option value="">— выберите услугу —</option>
+            </select>
+            <p class="field-error" id="serviceIdError"></p>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="date">Дата <span class="req" aria-hidden="true">*</span></label>
+              <input type="date" id="date" name="date" aria-describedby="dateError">
+              <p class="field-error" id="dateError"></p>
+            </div>
+            <div class="field">
+              <label for="time">Время <span class="req" aria-hidden="true">*</span></label>
+              <input type="time" id="time" name="time" step="900" aria-describedby="timeError">
+              <p class="field-error" id="timeError"></p>
+            </div>
+          </div>
+
+          <div class="field" id="statusField" hidden>
+            <label for="status">Статус</label>
+            <select id="status" name="status"></select>
+          </div>
+
+          <div class="field">
+            <label for="comment">Комментарий</label>
+            <textarea id="comment" name="comment" rows="3" maxlength="200"
+                      placeholder="Пожелания клиента (необязательно)"></textarea>
+            <p class="hint"><span id="commentCounter">0</span> / 200</p>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="submitBtn">Создать запись</button>
+            <button type="button" class="btn btn-ghost" id="resetBtn">Очистить</button>
+          </div>
+          <p class="hint">Поля со звёздочкой обязательны. Используйте вымышленные данные:
+            записи хранятся только в этом браузере.</p>
+        </form>
+      </section>
+
+      <section class="card list-card" aria-labelledby="listTitle">
+        <div class="list-head">
+          <h2 id="listTitle">Список записей</h2>
+          <span class="muted" id="listCounter"></span>
+        </div>
+
+        <div class="filters">
+          <label class="filter">
+            <span>Поиск</span>
+            <input type="search" id="searchInput" placeholder="Имя или телефон">
+          </label>
+          <label class="filter">
+            <span>Статус</span>
+            <select id="statusFilter">
+              <option value="all">Все</option>
+            </select>
+          </label>
+          <label class="filter">
+            <span>Дата</span>
+            <input type="date" id="dateFilter">
+          </label>
+          <button type="button" class="btn btn-ghost btn-small" id="clearFilters">Сбросить</button>
+        </div>
+
+        <div class="table-wrap">
+          <table class="bookings-table">
+            <thead>
+              <tr>
+                <th>Дата и время</th>
+                <th>Клиент</th>
+                <th>Услуга</th>
+                <th>Статус</th>
+                <th class="col-actions">Действия</th>
+              </tr>
+            </thead>
+            <tbody id="bookingsBody"></tbody>
+          </table>
+        </div>
+
+        <div class="empty" id="emptyState" hidden>
+          <p id="emptyText">Записей пока нет.</p>
+          <button type="button" class="btn btn-ghost btn-small" id="demoBtn">Добавить демонстрационные записи</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Учебный проект · группа ПО2401 · 2026 · Данные хранятся только в этом браузере (localStorage)
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

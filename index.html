@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Главная — Запись на услуги, студия «Лаванда»</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark" aria-hidden="true">Л</span>
+        <span>Студия «Лаванда»</span>
+      </a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="index.html" data-nav="home">Главная</a>
+        <a href="bookings.html" data-nav="bookings">Записи</a>
+        <a href="about.html" data-nav="about">О проекте</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Электронный журнал записи</p>
+        <h1>Запись клиентов на услуги без бумажного журнала</h1>
+        <p class="lead">
+          Администратор студии создаёт запись за минуту, видит занятое время
+          и не допускает двойной записи к мастеру. Все записи сохраняются
+          в браузере и остаются после перезагрузки страницы.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="bookings.html#new">Записать клиента</a>
+          <a class="btn btn-ghost" href="bookings.html">Открыть журнал</a>
+        </div>
+      </div>
+      <div class="stats" aria-label="Сводка по записям">
+        <div class="stat">
+          <span class="stat-value" id="statPlanned">0</span>
+          <span class="stat-label">активных записей</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="statToday">0</span>
+          <span class="stat-label">записей на сегодня</span>
+        </div>
+        <div class="stat stat-wide">
+          <span class="stat-label">Ближайшая запись</span>
+          <span class="stat-next" id="statNext">Записей пока нет</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Услуги студии</h2>
+        <p class="muted">Длительность услуги учитывается при проверке свободного времени.</p>
+      </div>
+      <div class="services-grid" id="servicesGrid"></div>
+    </section>
+
+    <section class="section">
+      <h2>Как это работает</h2>
+      <ol class="steps">
+        <li>
+          <strong>Клиент обращается</strong>
+          <span>Звонит или приходит в студию и называет нужную услугу и удобное время.</span>
+        </li>
+        <li>
+          <strong>Администратор создаёт запись</strong>
+          <span>Заполняет форму в разделе «Записи». Система проверяет поля и занятость времени.</span>
+        </li>
+        <li>
+          <strong>Запись в журнале</strong>
+          <span>Запись можно изменить, отменить, отметить выполненной или удалить.</span>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Учебный проект · группа ПО2401 · 2026 · Данные хранятся только в этом браузере (localStorage)
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

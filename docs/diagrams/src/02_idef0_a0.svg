@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#111"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="700" fill="#ffffff"/>
+  <text x="600" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#111">Диаграмма IDEF0 (контекстная, A-0)</text>
+
+  <!-- Функциональный блок -->
+  <rect x="430" y="250" width="340" height="170" fill="#f4f1fb" stroke="#111" stroke-width="2.2"/>
+  <text x="600" y="327" text-anchor="middle" font-size="22" font-weight="700" fill="#111">Вести запись</text>
+  <text x="600" y="355" text-anchor="middle" font-size="22" font-weight="700" fill="#111">клиентов на услуги</text>
+  <text x="756" y="410" text-anchor="end" font-size="15" font-weight="700" fill="#111">A0</text>
+
+  <g stroke="#111" stroke-width="1.8" fill="none" marker-end="url(#arrow)">
+    <!-- Управление (сверху) -->
+    <polyline points="290,118 290,190 500,190 500,250"/>
+    <polyline points="600,118 600,250"/>
+    <polyline points="910,118 910,190 700,190 700,250"/>
+    <!-- Входы (слева) -->
+    <polyline points="40,300 430,300"/>
+    <polyline points="40,380 430,380"/>
+    <!-- Выходы (справа) -->
+    <polyline points="770,290 1160,290"/>
+    <polyline points="770,350 1160,350"/>
+    <polyline points="770,410 1160,410"/>
+    <!-- Механизмы (снизу) -->
+    <polyline points="290,590 290,500 520,500 520,420"/>
+    <polyline points="910,590 910,500 680,500 680,420"/>
+  </g>
+
+  <g font-size="15" fill="#111">
+    <!-- Управление -->
+    <text x="290" y="84" text-anchor="middle">Перечень услуг,</text>
+    <text x="290" y="104" text-anchor="middle">длительность и цены</text>
+    <text x="600" y="84" text-anchor="middle">График работы студии</text>
+    <text x="600" y="104" text-anchor="middle">09:00–21:00</text>
+    <text x="910" y="84" text-anchor="middle">Правила записи и</text>
+    <text x="910" y="104" text-anchor="middle">требования ТЗ (безопасность)</text>
+    <text x="250" y="182" font-size="13" fill="#555">C1</text>
+    <text x="608" y="182" font-size="13" fill="#555">C2</text>
+    <text x="928" y="182" font-size="13" fill="#555">C3</text>
+
+    <!-- Входы -->
+    <text x="50" y="270">Обращение клиента</text>
+    <text x="50" y="290">(звонок или визит)</text>
+    <text x="50" y="350">Данные клиента: имя, телефон,</text>
+    <text x="50" y="370">услуга, желаемые дата и время</text>
+    <text x="400" y="292" font-size="13" fill="#555">I1</text>
+    <text x="400" y="372" font-size="13" fill="#555">I2</text>
+
+    <!-- Выходы -->
+    <text x="790" y="281">Подтверждённая запись в журнале</text>
+    <text x="790" y="341">Изменённая или отменённая запись</text>
+    <text x="790" y="401">Отказ с указанием причины</text>
+    <text x="1125" y="281" font-size="13" fill="#555">O1</text>
+    <text x="1125" y="341" font-size="13" fill="#555">O2</text>
+    <text x="1125" y="401" font-size="13" fill="#555">O3</text>
+
+    <!-- Механизмы -->
+    <text x="290" y="614" text-anchor="middle">Администратор студии</text>
+    <text x="910" y="614" text-anchor="middle">Веб-приложение «Лаванда»</text>
+    <text x="910" y="634" text-anchor="middle">(браузер, localStorage)</text>
+    <text x="298" y="560" font-size="13" fill="#555">M1</text>
+    <text x="918" y="560" font-size="13" fill="#555">M2</text>
+  </g>
+
+  <!-- Рамка IDEF0 -->
+  <g font-size="13" fill="#111">
+    <rect x="20" y="650" width="1160" height="40" fill="#fff" stroke="#111" stroke-width="1.2"/>
+    <line x1="200" y1="650" x2="200" y2="690" stroke="#111" stroke-width="1.2"/>
+    <line x1="1000" y1="650" x2="1000" y2="690" stroke="#111" stroke-width="1.2"/>
+    <text x="30" y="666" fill="#666">УЗЕЛ:</text>
+    <text x="30" y="684" font-weight="700" font-size="14">A-0</text>
+    <text x="210" y="666" fill="#666">НАЗВАНИЕ:</text>
+    <text x="210" y="684" font-weight="700" font-size="14">Вести запись клиентов на услуги (студия «Лаванда»)</text>
+    <text x="1010" y="666" fill="#666">НОМЕР:</text>
+    <text x="1010" y="684" font-weight="700" font-size="14">1</text>
+  </g>
+</svg>

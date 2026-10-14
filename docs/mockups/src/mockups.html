@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Макеты интерфейса — Запись на услуги</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 20px; background: #e9e9e9; font-family: "Segoe UI", Arial, sans-serif; color: #444; }
+  .frame { width: 1200px; background: #fff; border: 2px solid #777; border-radius: 10px; margin-bottom: 30px; position: relative; overflow: hidden; }
+  .chrome { height: 34px; background: #ddd; border-bottom: 2px solid #999; display: flex; align-items: center; gap: 7px; padding: 0 12px; }
+  .chrome i { width: 11px; height: 11px; border-radius: 50%; background: #aaa; display: inline-block; }
+  .chrome .url { margin-left: 14px; background: #fff; border: 1px solid #aaa; border-radius: 12px; font-size: 12px; padding: 2px 14px; width: 520px; color: #777; }
+  .title { position: absolute; right: 14px; top: 6px; font-size: 13px; font-weight: 700; color: #555; letter-spacing: .04em; text-transform: uppercase; }
+  .page { padding: 0 34px 26px; position: relative; }
+  .hdr { display: flex; justify-content: space-between; align-items: center; height: 62px; border-bottom: 2px dashed #bbb; margin: 0 -34px 22px; padding: 0 34px; }
+  .logo { border: 2px solid #999; background: #f0f0f0; padding: 6px 14px; font-weight: 700; font-size: 13px; }
+  .nav { display: flex; gap: 10px; }
+  .nav span { border: 2px solid #999; padding: 5px 14px; font-size: 13px; font-weight: 600; border-radius: 6px; }
+  .nav span.on { background: #555; color: #fff; border-color: #555; }
+  .box { border: 2px solid #999; background: #f4f4f4; border-radius: 6px; padding: 12px; position: relative; }
+  .line { height: 10px; background: #cfcfcf; border-radius: 5px; margin: 7px 0; }
+  .line.dark { background: #9a9a9a; height: 16px; }
+  .w30 { width: 30%; } .w40 { width: 40%; } .w50 { width: 50%; } .w60 { width: 60%; } .w70 { width: 70%; } .w80 { width: 80%; } .w90 { width: 90%; }
+  .btn { display: inline-block; border: 2px solid #666; border-radius: 6px; padding: 6px 14px; font-size: 13px; font-weight: 700; background: #fff; }
+  .btn.main { background: #666; color: #fff; }
+  .btn.sm { padding: 3px 8px; font-size: 11.5px; font-weight: 600; }
+  .lbl { font-size: 12.5px; font-weight: 700; color: #555; margin-bottom: 4px; }
+  .inp { border: 2px solid #999; background: #fff; height: 32px; border-radius: 5px; margin-bottom: 10px; font-size: 12px; color: #999; padding: 6px 8px; }
+  .err { color: #c0392b; font-size: 11.5px; margin: -6px 0 10px; }
+  .h1 { font-size: 24px; font-weight: 700; color: #555; margin: 0 0 6px; }
+  .h2 { font-size: 16px; font-weight: 700; color: #555; margin: 0 0 10px; }
+  .grid { display: grid; gap: 14px; }
+  .mark { position: absolute; width: 28px; height: 28px; border-radius: 50%; background: #d64535; color: #fff; font-weight: 700; font-size: 14px; display: grid; place-items: center; box-shadow: 0 0 0 3px #fff; z-index: 2; }
+  .notes { border-top: 2px solid #bbb; background: #fafafa; padding: 12px 34px 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 30px; font-size: 13.5px; color: #333; }
+  .notes div { display: flex; gap: 8px; align-items: baseline; }
+  .notes b { flex: none; width: 22px; height: 22px; border-radius: 50%; background: #d64535; color: #fff; font-size: 12px; display: grid; place-items: center; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  th { text-align: left; border-bottom: 2px solid #999; padding: 6px; color: #666; font-size: 11.5px; text-transform: uppercase; }
+  td { border-bottom: 1px solid #ccc; padding: 7px 6px; vertical-align: top; }
+  .badge { border: 2px solid #888; border-radius: 10px; padding: 1px 8px; font-size: 11px; font-weight: 700; }
+  .ftr { border-top: 2px dashed #bbb; margin: 22px -34px 0; padding: 10px 34px 0; }
+</style>
+</head>
+<body>
+
+<!-- ======================= Экран 1: Главная ======================= -->
+<section class="frame" id="m1">
+  <div class="chrome"><i></i><i></i><i></i><span class="url">file:///…/project/index.html</span></div>
+  <div class="title">Экран 1 — «Главная»</div>
+  <div class="page">
+    <div class="hdr">
+      <span class="logo">ЛОГОТИП · Студия «Лаванда»</span>
+      <span class="nav"><span class="on">Главная</span><span>Записи</span><span>О проекте</span></span>
+    </div>
+    <span class="mark" style="right:300px; top:12px;">1</span>
+
+    <div class="grid" style="grid-template-columns: 1.4fr 1fr; align-items:center;">
+      <div>
+        <div class="line w30"></div>
+        <div class="h1">Заголовок: запись клиентов на услуги</div>
+        <div class="line w90"></div><div class="line w80"></div><div class="line w60"></div>
+        <div style="margin-top:16px; position:relative;">
+          <span class="btn main">Записать клиента</span> <span class="btn">Открыть журнал</span>
+          <span class="mark" style="left:-14px; top:-14px;">2</span>
+        </div>
+      </div>
+      <div class="grid" style="grid-template-columns: 1fr 1fr; gap:10px; position:relative;">
+        <span class="mark" style="left:-14px; top:-14px;">3</span>
+        <div class="box"><div class="line dark w30"></div><div class="line w70"></div><div style="font-size:11px">активных записей</div></div>
+        <div class="box"><div class="line dark w30"></div><div class="line w70"></div><div style="font-size:11px">на сегодня</div></div>
+        <div class="box" style="grid-column:1/-1"><div style="font-size:11px">ближайшая запись</div><div class="line w90"></div></div>
+      </div>
+    </div>
+
+    <div class="h2" style="margin-top:26px;">Услуги студии</div>
+    <div class="grid" style="grid-template-columns: repeat(6, 1fr); gap:10px; position:relative;">
+      <span class="mark" style="left:-14px; top:-14px;">4</span>
+      <div class="box"><div class="line w50"></div><div class="line dark w90"></div><div class="line w40"></div><div class="line dark w50"></div></div>
+      <div class="box"><div class="line w50"></div><div class="line dark w90"></div><div class="line w40"></div><div class="line dark w50"></div></div>
+      <div class="box"><div class="line w50"></div><div class="line dark w90"></div><div class="line w40"></div><div class="line dark w50"></div></div>
+      <div class="box"><div class="line w50"></div><div class="line dark w90"></div><div class="line w40"></div><div class="line dark w50"></div></div>
+      <div class="box"><div class="line w50"></div><div class="line dark w90"></div><div class="line w40"></div><div class="line dark w50"></div></div>
+      <div class="box"><div class="line w50"></div><div class="line dark w90"></div><div class="line w40"></div><div class="line dark w50"></div></div>
+    </div>
+
+    <div class="h2" style="margin-top:24px;">Как это работает</div>
+    <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap:10px;">
+      <div class="box"><b>1</b><div class="line w60"></div><div class="line w90"></div></div>
+      <div class="box"><b>2</b><div class="line w60"></div><div class="line w90"></div></div>
+      <div class="box"><b>3</b><div class="line w60"></div><div class="line w90"></div></div>
+    </div>
+    <div class="ftr"><div class="line w50"></div></div>
+  </div>
+  <div class="notes">
+    <div><b>1</b>Меню из трёх разделов; текущий раздел выделен.</div>
+    <div><b>2</b>Кнопки перехода к форме новой записи и к журналу.</div>
+    <div><b>3</b>Сводка: активные записи, записи на сегодня, ближайшая запись.</div>
+    <div><b>4</b>Карточки услуг: категория, название, длительность, цена.</div>
+  </div>
+</section>
+
+<!-- ======================= Экран 2: Записи ======================= -->
+<section class="frame" id="m2">
+  <div class="chrome"><i></i><i></i><i></i><span class="url">file:///…/project/bookings.html</span></div>
+  <div class="title">Экран 2 — «Записи» (CRUD)</div>
+  <div class="page">
+    <div class="hdr">
+      <span class="logo">ЛОГОТИП · Студия «Лаванда»</span>
+      <span class="nav"><span>Главная</span><span class="on">Записи</span><span>О проекте</span></span>
+    </div>
+    <div class="h1">Журнал записей</div>
+    <div class="line w40" style="margin-bottom:16px"></div>
+
+    <div class="grid" style="grid-template-columns: 300px 1fr; align-items:start;">
+      <div class="box" style="background:#fff;">
+        <span class="mark" style="left:-14px; top:-14px;">1</span>
+        <div class="h2">Новая запись / Редактирование</div>
+        <div class="lbl">Имя клиента *</div><div class="inp" style="border-color:#c0392b">Анна Смирнова</div>
+        <div class="err">Укажите имя клиента. <span class="mark" style="position:static; display:inline-grid; width:22px; height:22px; font-size:12px; box-shadow:none; vertical-align:middle;">2</span></div>
+        <div class="lbl">Телефон *</div><div class="inp">+7 900 000-00-00</div>
+        <div class="lbl">Услуга *</div><div class="inp">— выберите услугу — ▾</div>
+        <div class="grid" style="grid-template-columns:1fr 1fr; gap:8px;">
+          <div><div class="lbl">Дата *</div><div class="inp">дд.мм.гггг</div></div>
+          <div><div class="lbl">Время *</div><div class="inp">--:--</div></div>
+        </div>
+        <div class="lbl">Статус (только при редактировании)</div><div class="inp">Запланирована ▾</div>
+        <div class="lbl">Комментарий</div><div class="inp" style="height:50px">до 200 символов</div>
+        <span class="btn main">Создать запись</span> <span class="btn">Очистить</span>
+      </div>
+
+      <div class="box" style="background:#fff;">
+        <div class="h2">Список записей <span style="float:right; font-weight:400; font-size:12px;">Показано N из M</span></div>
+        <div class="grid" style="grid-template-columns: 1.2fr 1fr 1fr auto; gap:8px; align-items:end; position:relative;">
+          <span class="mark" style="left:-30px; top:-30px;">3</span>
+          <div><div class="lbl">Поиск</div><div class="inp" style="margin:0">имя или телефон</div></div>
+          <div><div class="lbl">Статус</div><div class="inp" style="margin:0">Все ▾</div></div>
+          <div><div class="lbl">Дата</div><div class="inp" style="margin:0">дд.мм.гггг</div></div>
+          <span class="btn">Сбросить</span>
+        </div>
+        <table style="margin-top:12px; position:relative;">
+          <tr><th>Дата и время</th><th>Клиент</th><th>Услуга</th><th>Статус</th><th style="position:relative">Действия <span class="mark" style="right:-6px; top:-10px;">4</span></th></tr>
+          <tr><td><b>15.10.2026</b><br>чт, 10:00–11:00</td><td><b>Имя клиента</b><br>+7 900 …<br><i>комментарий</i></td><td>Женская стрижка<br>1 500 ₽</td><td><span class="badge">Запланирована</span></td><td><span class="btn sm">Изменить</span> <span class="btn sm">Выполнена</span><br><span class="btn sm" style="margin-top:4px">Отменить</span> <span class="btn sm" style="margin-top:4px">Удалить</span></td></tr>
+          <tr><td><b>15.10.2026</b><br>чт, 11:30–12:10</td><td><b>Имя клиента</b><br>+7 900 …</td><td>Мужская стрижка<br>900 ₽</td><td><span class="badge">Выполнена</span></td><td><span class="btn sm">Изменить</span> <span class="btn sm">Удалить</span></td></tr>
+          <tr style="color:#aaa"><td><b>16.10.2026</b><br>пт, 12:00–14:00</td><td><b><s>Имя клиента</s></b><br>+7 900 …</td><td>Окрашивание<br>3 500 ₽</td><td><span class="badge" style="border-color:#bbb">Отменена</span></td><td><span class="btn sm">Изменить</span> <span class="btn sm">Удалить</span></td></tr>
+          <tr><td><b>17.10.2026</b><br>сб, 15:00–16:00</td><td><b>Имя клиента</b><br>+7 900 …</td><td>Маникюр<br>1 300 ₽</td><td><span class="badge">Запланирована</span></td><td><span class="btn sm">Изменить</span> <span class="btn sm">Выполнена</span><br><span class="btn sm" style="margin-top:4px">Отменить</span> <span class="btn sm" style="margin-top:4px">Удалить</span></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <div><b>1</b>Одна форма для создания и редактирования; обязательные поля отмечены «*».</div>
+    <div><b>2</b>Сообщение об ошибке выводится под полем, поле выделяется красным.</div>
+    <div><b>3</b>Поиск по имени/телефону, фильтры по статусу и дате, сброс фильтров.</div>
+    <div><b>4</b>Действия: изменить, отметить выполнение, отменить и удалить (с подтверждением).</div>
+  </div>
+</section>
+
+<!-- ======================= Экран 3: О проекте ======================= -->
+<section class="frame" id="m3">
+  <div class="chrome"><i></i><i></i><i></i><span class="url">file:///…/project/about.html</span></div>
+  <div class="title">Экран 3 — «О проекте»</div>
+  <div class="page">
+    <div class="hdr">
+      <span class="logo">ЛОГОТИП · Студия «Лаванда»</span>
+      <span class="nav"><span>Главная</span><span>Записи</span><span class="on">О проекте</span></span>
+    </div>
+    <div class="h1">О проекте</div>
+    <div class="line w50" style="margin-bottom:16px"></div>
+    <div class="grid" style="grid-template-columns: 1fr 1fr;">
+      <div class="box" style="background:#fff">
+        <span class="mark" style="left:-14px; top:-14px;">1</span>
+        <div class="h2">Цель</div>
+        <div class="line w90"></div><div class="line w80"></div><div class="line w90"></div><div class="line w50"></div>
+        <div class="h2" style="margin-top:12px">Функции</div>
+        <div class="line w70"></div><div class="line w60"></div><div class="line w70"></div><div class="line w50"></div>
+      </div>
+      <div class="box" style="background:#fff">
+        <span class="mark" style="left:-14px; top:-14px;">2</span>
+        <div class="h2">Команда</div>
+        <table><tr><td><b>Участник 1</b></td><td>роль, зона ответственности</td></tr><tr><td><b>Участник 2</b></td><td>роль, зона ответственности</td></tr><tr><td><b>Участник 3</b></td><td>роль, зона ответственности</td></tr></table>
+        <div class="h2" style="margin-top:12px">Технологии</div>
+        <div class="line w80"></div>
+      </div>
+      <div class="box" style="background:#fff">
+        <span class="mark" style="left:-14px; top:-14px;">3</span>
+        <div class="h2">Безопасность и ограничения</div>
+        <div class="line w80"></div><div class="line w70"></div><div class="line w90"></div><div class="line w60"></div><div class="line w70"></div>
+      </div>
+      <div class="box" style="background:#fff">
+        <span class="mark" style="left:-14px; top:-14px;">4</span>
+        <div class="h2">Данные</div>
+        <div class="line w90"></div><div class="line w60"></div>
+        <div style="margin-top:12px"><span class="btn main">Удалить все записи</span></div>
+      </div>
+    </div>
+    <div class="ftr"><div class="line w50"></div></div>
+  </div>
+  <div class="notes">
+    <div><b>1</b>Назначение системы и список функций.</div>
+    <div><b>2</b>Состав команды, роли и используемые технологии.</div>
+    <div><b>3</b>Меры безопасности и ограничения учебного хранилища.</div>
+    <div><b>4</b>Сведения о хранении данных и очистка хранилища с подтверждением.</div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1200" height="640" fill="#ffffff"/>
+  <text x="600" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#222">Логическая модель данных (без реальной БД)</text>
+
+  <!-- ===== Клиент ===== -->
+  <g>
+    <rect x="40" y="90" width="300" height="126" fill="#fff" stroke="#333" stroke-width="1.6"/>
+    <rect x="40" y="90" width="300" height="36" fill="#ddd3f5" stroke="#333" stroke-width="1.6"/>
+    <text x="190" y="114" text-anchor="middle" font-size="16" font-weight="700">КЛИЕНТ</text>
+    <g font-size="14" fill="#222">
+      <line x1="40" y1="156" x2="340" y2="156" stroke="#ccc"/>
+      <line x1="40" y1="186" x2="340" y2="186" stroke="#ccc"/>
+      <text x="50" y="146" font-weight="700" fill="#6b4fbb">PK</text><text x="84" y="146" font-weight="700">id_клиента : строка</text>
+      <text x="84" y="176">имя : строка(60), обяз.</text>
+      <text x="84" y="206">телефон : строка(20), обяз.</text>
+    </g>
+  </g>
+
+  <!-- ===== Запись ===== -->
+  <g>
+    <rect x="450" y="60" width="330" height="306" fill="#fff" stroke="#333" stroke-width="1.6"/>
+    <rect x="450" y="60" width="330" height="36" fill="#ddd3f5" stroke="#333" stroke-width="1.6"/>
+    <text x="615" y="84" text-anchor="middle" font-size="16" font-weight="700">ЗАПИСЬ</text>
+    <g stroke="#ccc">
+      <line x1="450" y1="126" x2="780" y2="126"/><line x1="450" y1="156" x2="780" y2="156"/>
+      <line x1="450" y1="186" x2="780" y2="186"/><line x1="450" y1="216" x2="780" y2="216"/>
+      <line x1="450" y1="246" x2="780" y2="246"/><line x1="450" y1="276" x2="780" y2="276"/>
+      <line x1="450" y1="306" x2="780" y2="306"/><line x1="450" y1="336" x2="780" y2="336"/>
+    </g>
+    <g font-size="14" fill="#222">
+      <text x="460" y="116" font-weight="700" fill="#6b4fbb">PK</text><text x="494" y="116" font-weight="700">id_записи : строка</text>
+      <text x="460" y="146" font-weight="700" fill="#2e7d4f">FK</text><text x="494" y="146">id_клиента → КЛИЕНТ</text>
+      <text x="460" y="176" font-weight="700" fill="#2e7d4f">FK</text><text x="494" y="176">id_услуги → УСЛУГА</text>
+      <text x="494" y="206">дата : дата, обяз.</text>
+      <text x="494" y="236">время_начала : время, обяз.</text>
+      <text x="494" y="266">статус : перечисление</text>
+      <text x="494" y="296">комментарий : строка(200)</text>
+      <text x="494" y="326">создана : дата-время</text>
+      <text x="494" y="356">изменена : дата-время</text>
+    </g>
+  </g>
+
+  <!-- ===== Услуга ===== -->
+  <g>
+    <rect x="880" y="120" width="290" height="186" fill="#fff" stroke="#333" stroke-width="1.6"/>
+    <rect x="880" y="120" width="290" height="36" fill="#ddd3f5" stroke="#333" stroke-width="1.6"/>
+    <text x="1025" y="144" text-anchor="middle" font-size="16" font-weight="700">УСЛУГА</text>
+    <g stroke="#ccc">
+      <line x1="880" y1="186" x2="1170" y2="186"/><line x1="880" y1="216" x2="1170" y2="216"/>
+      <line x1="880" y1="246" x2="1170" y2="246"/><line x1="880" y1="276" x2="1170" y2="276"/>
+    </g>
+    <g font-size="14" fill="#222">
+      <text x="890" y="176" font-weight="700" fill="#6b4fbb">PK</text><text x="924" y="176" font-weight="700">id_услуги : строка</text>
+      <text x="924" y="206">название : строка, обяз.</text>
+      <text x="924" y="236">категория : строка</text>
+      <text x="924" y="266">длительность_мин : число</text>
+      <text x="924" y="296">цена_руб : число</text>
+    </g>
+  </g>
+
+  <!-- ===== Связи (нотация «вороньи лапки») ===== -->
+  <g stroke="#333" stroke-width="1.6" fill="none">
+    <line x1="340" y1="141" x2="450" y2="141"/>
+    <line x1="352" y1="131" x2="352" y2="151"/><line x1="359" y1="131" x2="359" y2="151"/>
+    <line x1="432" y1="141" x2="450" y2="131"/><line x1="432" y1="141" x2="450" y2="151"/>
+    <circle cx="425" cy="141" r="5" fill="#fff"/>
+
+    <line x1="780" y1="171" x2="880" y2="171"/>
+    <line x1="868" y1="161" x2="868" y2="181"/><line x1="861" y1="161" x2="861" y2="181"/>
+    <line x1="798" y1="171" x2="780" y2="161"/><line x1="798" y1="171" x2="780" y2="181"/>
+    <circle cx="805" cy="171" r="5" fill="#fff"/>
+  </g>
+  <g font-size="13.5" fill="#333">
+    <text x="395" y="128" text-anchor="middle" font-style="italic">делает</text>
+    <text x="352" y="168">1</text>
+    <text x="420" y="168">0..N</text>
+    <text x="830" y="158" text-anchor="middle" font-style="italic">выбрана в</text>
+    <text x="862" y="198">1</text>
+    <text x="785" y="198">0..N</text>
+  </g>
+
+  <!-- Обозначения -->
+  <g font-size="13" fill="#555">
+    <text x="40" y="262" font-weight="700" fill="#333">Обозначения</text>
+    <line x1="40" y1="282" x2="80" y2="282" stroke="#333" stroke-width="1.6"/>
+    <line x1="62" y1="274" x2="62" y2="290" stroke="#333" stroke-width="1.6"/><line x1="69" y1="274" x2="69" y2="290" stroke="#333" stroke-width="1.6"/>
+    <text x="90" y="287">ровно один (1)</text>
+    <line x1="40" y1="310" x2="80" y2="310" stroke="#333" stroke-width="1.6"/>
+    <line x1="62" y1="310" x2="80" y2="302" stroke="#333" stroke-width="1.6"/><line x1="62" y1="310" x2="80" y2="318" stroke="#333" stroke-width="1.6"/>
+    <circle cx="55" cy="310" r="5" fill="#fff" stroke="#333" stroke-width="1.6"/>
+    <text x="90" y="315">ноль или много (0..N)</text>
+    <text x="40" y="343"><tspan font-weight="700" fill="#6b4fbb">PK</tspan> — первичный ключ, <tspan font-weight="700" fill="#2e7d4f">FK</tspan> — внешний ключ</text>
+  </g>
+
+  <!-- Правила -->
+  <rect x="40" y="400" width="1130" height="220" rx="8" fill="#f8f6fd" stroke="#d8cff0"/>
+  <text x="60" y="430" font-size="16" font-weight="700" fill="#4a3a86">Правила и ограничения</text>
+  <g font-size="14.5" fill="#222">
+    <text x="60" y="460">• Клиент — Запись (1 : N): у клиента может быть несколько записей, каждая запись относится к одному клиенту.</text>
+    <text x="60" y="486">• Услуга — Запись (1 : N): по одной услуге может быть много записей, в каждой записи ровно одна услуга.</text>
+    <text x="60" y="512">• статус ∈ {Запланирована, Выполнена, Отменена}; новая запись создаётся со статусом «Запланирована».</text>
+    <text x="60" y="538">• Для записей «Запланирована» по одной услуге в одну дату интервалы [время_начала; время_начала + длительность) не пересекаются.</text>
+    <text x="60" y="564">• время_начала + длительность услуги — в пределах графика 09:00–21:00; дата новой записи — не раньше текущей.</text>
+    <text x="60" y="598" fill="#555" font-style="italic">Реализация в учебной версии: массив объектов «Запись» в localStorage (ключ lavanda.bookings); имя и телефон клиента хранятся</text>
+    <text x="60" y="616" fill="#555" font-style="italic">внутри записи (поля clientName, phone); справочник услуг — константа SERVICES в script.js.</text>
+  </g>
+</svg>

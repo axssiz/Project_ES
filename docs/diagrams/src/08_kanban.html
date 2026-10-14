@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Kanban-доска проекта</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: #5b4a9e; color: #222; }
+  .board { width: 1280px; padding: 18px 20px 24px; }
+  .top { display: flex; justify-content: space-between; align-items: center; color: #fff; margin-bottom: 14px; }
+  .top h1 { font-size: 21px; margin: 0; }
+  .top span { font-size: 14px; opacity: .9; }
+  .legend { display: flex; gap: 14px; font-size: 13px; color: #fff; margin-bottom: 14px; }
+  .legend i { display: inline-block; width: 26px; height: 8px; border-radius: 4px; margin-right: 6px; vertical-align: middle; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 14px; align-items: start; }
+  .col { background: #ebecf0; border-radius: 10px; padding: 10px; }
+  .col h2 { font-size: 15px; margin: 2px 4px 10px; display: flex; justify-content: space-between; }
+  .col h2 b { background: #d5d6dc; border-radius: 10px; padding: 0 9px; font-size: 13px; }
+  .card { display: flex; align-items: center; gap: 8px; background: #fff; border-radius: 7px; padding: 7px 9px; margin-bottom: 7px; box-shadow: 0 1px 1px rgba(9,30,66,.25); font-size: 14px; }
+  .card .lbl { flex: none; align-self: stretch; width: 6px; border-radius: 3px; }
+  .card .t { flex: 1; }
+  .card .meta { flex: none; display: flex; gap: 8px; align-items: center; font-size: 12px; color: #5e6c84; }
+  .av { width: 24px; height: 24px; border-radius: 50%; color: #fff; font-size: 11px; font-weight: 700; display: grid; place-items: center; }
+  .u1 { background: #e07b39; } .u2 { background: #2f8f9d; } .u3 { background: #6b4fbb; } .all { background: #7a869a; }
+  .an { background: #e07b39; } .pr { background: #2f8f9d; } .dev { background: #6b4fbb; } .doc { background: #7a869a; }
+  .chg { box-shadow: 0 0 0 2px #c0392b; }
+</style>
+</head>
+<body>
+<div class="board" id="board">
+  <div class="top">
+    <h1>Проект «Запись на услуги» — Kanban-доска</h1>
+    <span>состояние на начало 3-й недели · WIP-лимит «В работе»: 3</span>
+  </div>
+  <div class="legend">
+    <span><i class="an"></i>анализ и ТЗ (У1)</span>
+    <span><i class="pr"></i>проектирование (У2)</span>
+    <span><i class="dev"></i>разработка (У3)</span>
+    <span><i class="doc"></i>документы и защита</span>
+    <span><i style="background:#fff;border:2px solid #c0392b;width:18px;height:12px"></i>задача из журнала изменений</span>
+  </div>
+  <div class="cols">
+    <div class="col">
+      <h2>Нужно <b>6</b></h2>
+      <div class="card"><div class="lbl dev"></div><span class="t">Раздел «О проекте»</span><div class="meta"><span>нед. 3</span><span class="av u3">У3</span></div></div>
+      <div class="card"><div class="lbl an"></div><span class="t">Таблица проверки функций (не менее 5 тестов)</span><div class="meta"><span>нед. 3</span><span class="av u1">У1</span></div></div>
+      <div class="card"><div class="lbl doc"></div><span class="t">Скриншоты сайта и итоговый отчёт</span><div class="meta"><span>нед. 3</span><span class="av u2">У2</span></div></div>
+      <div class="card"><div class="lbl doc"></div><span class="t">Презентация 5–7 слайдов</span><div class="meta"><span>нед. 4</span><span class="av u2">У2</span></div></div>
+      <div class="card"><div class="lbl dev"></div><span class="t">README.txt и ZIP-архив</span><div class="meta"><span>нед. 4</span><span class="av u3">У3</span></div></div>
+      <div class="card"><div class="lbl doc"></div><span class="t">Репетиция защиты (5–7 минут)</span><div class="meta"><span>нед. 4</span><span class="av all">все</span></div></div>
+    </div>
+    <div class="col">
+      <h2>В работе <b>3</b></h2>
+      <div class="card"><div class="lbl dev"></div><span class="t">Раздел «Записи»: CRUD и сохранение в localStorage</span><div class="meta"><span>нед. 3</span><span class="av u3">У3</span></div></div>
+      <div class="card chg"><div class="lbl dev"></div><span class="t">Проверка занятости времени с учётом длительности услуги (изменение №1)</span><div class="meta"><span>нед. 3</span><span class="av u3">У3</span></div></div>
+      <div class="card"><div class="lbl an"></div><span class="t">Тест-кейсы по требованиям ТЗ</span><div class="meta"><span>нед. 3</span><span class="av u1">У1</span></div></div>
+    </div>
+    <div class="col">
+      <h2>Готово <b>12</b></h2>
+      <div class="card"><div class="lbl an"></div><span class="t">Анализ предметной области и схема процесса</span><div class="meta"><span>нед. 1</span><span class="av u1">У1</span></div></div>
+      <div class="card"><div class="lbl an"></div><span class="t">Таблица заинтересованных сторон</span><div class="meta"><span>нед. 1</span><span class="av u1">У1</span></div></div>
+      <div class="card"><div class="lbl an"></div><span class="t">Техническое задание</span><div class="meta"><span>нед. 1</span><span class="av u1">У1</span></div></div>
+      <div class="card chg"><div class="lbl an"></div><span class="t">Журнал изменений: запись №1</span><div class="meta"><span>нед. 2</span><span class="av u1">У1</span></div></div>
+      <div class="card"><div class="lbl an"></div><span class="t">Сравнение Waterfall и Agile, план этапов</span><div class="meta"><span>нед. 2</span><span class="av u1">У1</span></div></div>
+      <div class="card"><div class="lbl pr"></div><span class="t">Диаграмма IDEF0</span><div class="meta"><span>нед. 2</span><span class="av u2">У2</span></div></div>
+      <div class="card"><div class="lbl pr"></div><span class="t">UML Use Case и Class</span><div class="meta"><span>нед. 2</span><span class="av u2">У2</span></div></div>
+      <div class="card"><div class="lbl pr"></div><span class="t">Логическая модель данных</span><div class="meta"><span>нед. 2</span><span class="av u2">У2</span></div></div>
+      <div class="card"><div class="lbl pr"></div><span class="t">Макеты трёх экранов</span><div class="meta"><span>нед. 2</span><span class="av u2">У2</span></div></div>
+      <div class="card"><div class="lbl dev"></div><span class="t">Структура папки проекта</span><div class="meta"><span>нед. 2</span><span class="av u3">У3</span></div></div>
+      <div class="card"><div class="lbl dev"></div><span class="t">Общий стиль и навигация</span><div class="meta"><span>нед. 3</span><span class="av u3">У3</span></div></div>
+      <div class="card"><div class="lbl dev"></div><span class="t">Раздел «Главная»</span><div class="meta"><span>нед. 3</span><span class="av u3">У3</span></div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

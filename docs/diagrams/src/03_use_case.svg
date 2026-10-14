@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="750" viewBox="0 0 1100 750" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="open" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M0,0 L11,6 L0,12" fill="none" stroke="#333" stroke-width="1.6"/>
+    </marker>
+  </defs>
+  <rect width="1100" height="750" fill="#ffffff"/>
+  <text x="550" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#222">UML-диаграмма вариантов использования (Use Case)</text>
+
+  <!-- Граница системы -->
+  <rect x="260" y="56" width="810" height="674" rx="8" fill="#fbfaff" stroke="#4a3a86" stroke-width="1.8"/>
+  <text x="280" y="82" font-size="16" font-weight="700" fill="#4a3a86">Веб-приложение «Запись на услуги»</text>
+
+  <!-- Актор -->
+  <g stroke="#222" stroke-width="2.2" fill="none">
+    <circle cx="115" cy="330" r="20" fill="#fff"/>
+    <line x1="115" y1="350" x2="115" y2="420"/>
+    <line x1="80" y1="375" x2="150" y2="375"/>
+    <line x1="115" y1="420" x2="88" y2="470"/>
+    <line x1="115" y1="420" x2="142" y2="470"/>
+  </g>
+  <text x="115" y="498" text-anchor="middle" font-size="16" font-weight="700" fill="#222">Администратор</text>
+  <text x="115" y="518" text-anchor="middle" font-size="13" fill="#666">(пользователь системы)</text>
+
+  <!-- Ассоциации актора -->
+  <g stroke="#333" stroke-width="1.5">
+    <line x1="150" y1="390" x2="365" y2="125"/>
+    <line x1="150" y1="390" x2="365" y2="210"/>
+    <line x1="150" y1="390" x2="365" y2="305"/>
+    <line x1="150" y1="390" x2="365" y2="395"/>
+    <line x1="150" y1="390" x2="365" y2="485"/>
+    <line x1="150" y1="390" x2="365" y2="575"/>
+    <line x1="150" y1="390" x2="365" y2="665"/>
+  </g>
+
+  <!-- Основные варианты использования -->
+  <g fill="#fff" stroke="#4a3a86" stroke-width="1.8">
+    <ellipse cx="490" cy="125" rx="125" ry="31"/>
+    <ellipse cx="490" cy="210" rx="125" ry="31"/>
+    <ellipse cx="490" cy="305" rx="125" ry="31"/>
+    <ellipse cx="490" cy="395" rx="125" ry="31"/>
+    <ellipse cx="490" cy="485" rx="125" ry="31"/>
+    <ellipse cx="490" cy="575" rx="125" ry="31"/>
+    <ellipse cx="490" cy="665" rx="125" ry="31"/>
+  </g>
+  <g font-size="15" fill="#222" text-anchor="middle">
+    <text x="490" y="121">Просмотреть услуги</text>
+    <text x="490" y="139">и сводку</text>
+    <text x="490" y="215">Просмотреть список записей</text>
+    <text x="490" y="310">Создать запись</text>
+    <text x="490" y="400">Изменить запись</text>
+    <text x="490" y="490">Отметить выполнение</text>
+    <text x="490" y="580">Отменить запись</text>
+    <text x="490" y="670">Удалить запись</text>
+  </g>
+
+  <!-- Расширения и включения -->
+  <g fill="#f3effc" stroke="#4a3a86" stroke-width="1.8">
+    <ellipse cx="880" cy="210" rx="150" ry="36"/>
+    <ellipse cx="880" cy="350" rx="150" ry="36"/>
+    <ellipse cx="880" cy="620" rx="150" ry="36"/>
+  </g>
+  <g font-size="15" fill="#222" text-anchor="middle">
+    <text x="880" y="205">Найти и отфильтровать</text>
+    <text x="880" y="224">записи</text>
+    <text x="880" y="345">Проверить данные</text>
+    <text x="880" y="364">и занятость времени</text>
+    <text x="880" y="625">Подтвердить действие</text>
+  </g>
+
+  <g stroke="#333" stroke-width="1.5" stroke-dasharray="7 5" fill="none" marker-end="url(#open)">
+    <line x1="730" y1="210" x2="617" y2="210"/>
+    <line x1="612" y1="298" x2="733" y2="338"/>
+    <line x1="612" y1="402" x2="733" y2="362"/>
+    <line x1="612" y1="582" x2="733" y2="610"/>
+    <line x1="612" y1="658" x2="733" y2="630"/>
+  </g>
+  <g font-size="13.5" fill="#4a3a86" font-style="italic" text-anchor="middle">
+    <text x="673" y="200">«extend»</text>
+    <text x="664" y="304">«include»</text>
+    <text x="664" y="410">«include»</text>
+    <text x="664" y="584">«include»</text>
+    <text x="664" y="666">«include»</text>
+  </g>
+</svg>
